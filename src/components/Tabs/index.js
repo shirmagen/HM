@@ -87,7 +87,7 @@ export default function ScrollableTabsButtonForce() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-      <NewWindowDrawer ></NewWindowDrawer>
+      <NewWindowDrawer></NewWindowDrawer>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
