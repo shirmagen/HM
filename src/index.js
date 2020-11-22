@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import App from './App';
-import Tab from './Tab';
-import Map from './Map';
+import Tabs from './components/Tabs';
+import Map from './components/Map';
 
-ReactDOM.render(<Tab />, document.getElementById('tab'));
+ReactDOM.render(<Tabs />, document.getElementById('tab'));
 ReactDOM.render(<Map />, document.getElementById('map'));

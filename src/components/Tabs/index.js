@@ -13,6 +13,8 @@ import ThumbDown from '@material-ui/icons/ThumbDown';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import { Button } from '@material-ui/core';
+import Drawer from '@material-ui/core/Drawer';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -63,6 +65,18 @@ export default function ScrollableTabsButtonForce() {
     setValue(newValue);
   };
 
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+  
+    setState({ ...state, [anchor]: open });
+  };
+
+  const [state, setState] = React.useState({
+    shir: false
+  });
+
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
@@ -85,7 +99,11 @@ export default function ScrollableTabsButtonForce() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+      <Button variant="contained" color ={"primary"}>action 1</Button>
+      <Button variant="contained" color ={"primary"} onClick={toggleDrawer('shir', true)}>action 2</Button>
+      <Drawer open={state['shir']} onClose={toggleDrawer("shir", false)}>
+      {'shir'}
+      </Drawer>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
