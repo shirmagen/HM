@@ -1,14 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import {FormControl, Select} from '@material-ui/core';
+import {Button, FormControl, Select} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
   },
 }));
 
@@ -18,6 +19,10 @@ const handleChange = (event) => {
     ...state,
     [name]: event.target.value,
   });
+};
+
+const submit = () => {
+  alert('ok');
 };
 
 export default function BasicTextFields() {
@@ -46,6 +51,7 @@ export default function BasicTextFields() {
           <option value={20}>Twenty</option>
           <option value={30}>Thirty</option>
         </Select>
+        <Button onClick={submit}>save</Button>
     </FormControl>
   );
 }
