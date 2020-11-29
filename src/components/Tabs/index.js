@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import TabPanel from './Tab';
 import {AppBar, Tabs, Tab as MuiTab, Typography} from '@material-ui/core';
-import {Phone as PhoneIcon, Favorite as FavoriteIcon, PersonPin as PersonPinIcon, Help as HelpIcon, ShoppingBasket, ThumbDown, ThumbUp} from '@material-ui/icons';
+import {Phone as PhoneIcon, Favorite as FavoriteIcon, PersonPin as PersonPinIcon, Help as HelpIcon, ShoppingBasket
+  , ThumbDown, ThumbUp} from '@material-ui/icons';
 
 export default () => {
   const [value, setValue] = useState(0);
