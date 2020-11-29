@@ -1,3 +1,6 @@
 module.exports = {
-  "extends": ["sharongrossman/react"]
+  "extends": ["sharongrossman/react"],
+  "rules":[
+    "react/jsx-fragments": ["error", "syntax"]
+  ]
 };

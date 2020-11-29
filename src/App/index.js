@@ -1,9 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
+import Home from '../Home';
 
-class App extends Component {
-    render() {
-      return <span>Hello world!</span>
-    }
-  }
-
-export default App;
+export default () => 
+ <Home />

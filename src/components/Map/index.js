@@ -1,9 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
+import Image from '../../../assets/map.jpg';
 
-class Map extends Component {
-    render() {
-      return <img src="../../assets/1200px-Wkipedia_blank_world_map.jpg"/>
-    }
-  }
-
-export default Map;
+export default () => (
+  <img src={Image} />
+)
