@@ -4,7 +4,7 @@ import { Create, FlashOn, QueryBuilderOutlined } from '@material-ui/icons';
 import styled from 'styled-components';
 
 export default () => {
-  const HMVerticalToolBar = styled(ButtonGroup)`
+  const ApolloVerticalToolBar = styled(ButtonGroup)`
     position: absolute;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@ export default () => {
   `;
 
   return (
-    <HMVerticalToolBar orientation="vertical" color="primary">
+    <ApolloVerticalToolBar orientation="vertical" color="primary">
       <IconButton>
         <Create />
       </IconButton>
@@ -22,6 +22,6 @@ export default () => {
       <IconButton>
         <QueryBuilderOutlined />
       </IconButton>
-    </HMVerticalToolBar>
+    </ApolloVerticalToolBar>
   );
 };
