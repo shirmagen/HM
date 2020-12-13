@@ -1,5 +1,5 @@
 {
-  "name": "react-training",
+  "name": "hm",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -31,6 +31,7 @@
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.12.2",
+    "css-loader": "^5.0.1",
     "eslint": "^6.8.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-import": "^2.22.1",
@@ -43,6 +44,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-hot-loader": "^4.12.19",
+    "style-loader": "^2.0.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
@@ -50,6 +52,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "eslint-config-sharongrossman": "^0.1.4",
     "mui-flex-layout": "^1.1.1",
     "prettier": "^2.2.1",
