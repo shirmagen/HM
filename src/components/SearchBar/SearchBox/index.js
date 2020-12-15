@@ -4,17 +4,20 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import styled from 'styled-components';
 
 const ApolloSearchBar = styled(Autocomplete)`
+  position: absolute;
   width: 90%;
+  z-index: 1;
+  background: white;
 `;
 
-const getCountries = async ({active, setOptions}) => {
-    const response = await fetch('https://country.register.gov.uk/records.json?page-size=5000');
-    const countries = await response.json();
+const getCountries = async ({ active, setOptions }) => {
+  const response = await fetch('https://country.register.gov.uk/records.json?page-size=5000');
+  const countries = await response.json();
 
-    if (active) {
-      setOptions(Object.keys(countries).map((key) => countries[key].item[0]));
-    }
-  };
+  if (active) {
+    setOptions(Object.keys(countries).map((key) => countries[key].item[0]));
+  }
+};
 
 export default () => {
   const [open, setOpen] = useState(false);
@@ -28,7 +31,7 @@ export default () => {
       return undefined;
     }
 
-    getCountries({active, setOptions});
+    getCountries({ active, setOptions });
     return () => {
       active = false;
     };
