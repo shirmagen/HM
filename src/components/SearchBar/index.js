@@ -1,19 +1,26 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import styled from 'styled-components';
+import { Row, Column } from 'mui-flex-layout';
 import { CircularProgress } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
 
-export default () => {
-  const HMSearchBar = styled(Autocomplete)`
-    position: absolute;
-    width: 80%;
-    margin: 0;
-  `;
+const HMSearchBar = styled(Autocomplete)`
+  // position: absolute;
+  width: 90%;
+  // margin: 5px;
+`;
 
-  const [open, setOpen] = React.useState(false);
-  const [options, setOptions] = React.useState([]);
+const HMSearchIcon = styled(Search)`
+   padding-top: 15px;
+   paddinig-right: 5px;
+   margin: 8px;
+`;
+
+export default () => {
+  const [open, setOpen] = useState(false);
+  const [options, setOptions] = useState([]);
   const loading = open && options.length === 0;
 
   useEffect(() => {
@@ -25,7 +32,6 @@ export default () => {
 
     (async () => {
       const response = await fetch('https://country.register.gov.uk/records.json?page-size=5000');
-      // await sleep(1e3); // For demo purposes.
       const countries = await response.json();
 
       if (active) {
@@ -38,39 +44,40 @@ export default () => {
   }, [loading]);
 
   return (
-    <div>
+    <Row width={'100%'}>
       <HMSearchBar
         groupBy={(option) => option.firstLetter}
-        id="asynchronous-demo"
-      style={{ width: 300 }}
-      open={open}
-      onOpen={() => {
-        setOpen(true);
-      }}
-      onClose={() => {
-        setOpen(false);
-      }}
-      getOptionSelected={(option, value) => option.name === value.name}
-      getOptionLabel={(option) => option.name}
-      options={options}
-      loading={loading}
+        open={open}
+        onOpen={() => {
+          setOpen(true);
+        }}
+        onClose={() => {
+          setOpen(false);
+        }}
+        getOptionSelected={(option, value) => option.name === value.name}
+        getOptionLabel={(option) => option.name}
+        options={options}
+        loading={loading}
         renderInput={(params) => (
           <TextField
+            label="חפש שירים ואלבומים"
             {...params}
             InputProps={{
               ...params.InputProps,
               endAdornment: (
-                <React.Fragment>
-                  {loading ? <CircularProgress color="inherit" size={20} /> : null}
+                <>
+                  {/* {loading ? <CircularProgress color="inherit" size={20} /> : null} */}
                   {params.InputProps.endAdornment}
-                </React.Fragment>
+                </>
               ),
             }}
-          />
+          ></TextField>
         )}
       />
-      <Search />
-    </div>
+      {/* <Row padding-top={'20px'} padding-right={'5px'}> */}
+        <HMSearchIcon />
+      {/* </Row> */}
+    </Row>
   );
 };
 
