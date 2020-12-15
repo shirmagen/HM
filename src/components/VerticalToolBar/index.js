@@ -37,16 +37,12 @@ export default ({ isMainMode, setMainMode }) => {
         `};
   `;
 
-  const hideToolBar = () => {
-    setMainMode('draw');
-  };
-
   return (
     <ApolloVerticalToolBar orientation="vertical" color="primary">
-      <IconButton onClick={hideToolBar}>
+      <IconButton onClick={() => setMainMode('draw')}>
         <Create />
       </IconButton>
-      <IconButton>
+      <IconButton onClick={() => setMainMode('flash')}>
         <FlashOn />
       </IconButton>
       <IconButton>

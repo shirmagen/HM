@@ -5,6 +5,7 @@ import CreateButton from '../components/CreateNew';
 import ApolloAppBar from '../components/AppBar';
 import DrawToolBar from '../components/DrawToolBar';
 import { Row } from 'mui-flex-layout';
+import FlashMode from '../components/FlashMode';
 
 export default () => {
   const [isMainMode, setMainMode] = useState('main');
@@ -18,6 +19,7 @@ export default () => {
       <VerticalToolBar {...props}/>
       <CreateButton {...props}/>
       <DrawToolBar {...props}/>
+      <FlashMode {...props}/>
     </Row>
   );
 };
