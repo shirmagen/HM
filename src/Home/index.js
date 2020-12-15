@@ -3,6 +3,7 @@ import Map from '../components/Map';
 import VerticalToolBar from '../components/VerticalToolBar';
 import CreateButton from '../components/CreateNew';
 import ApolloAppBar from '../components/AppBar';
+import DrawToolBar from '../components/DrawToolBar';
 import { Row } from 'mui-flex-layout';
 
 export default () => {
@@ -16,6 +17,7 @@ export default () => {
         <Map />
       <VerticalToolBar {...props}/>
       <CreateButton {...props}/>
+      <DrawToolBar/>
     </Row>
   );
 };
