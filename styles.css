@@ -5,4 +5,5 @@ html, body, #root {
     flex-direction: column;
     flex: 1;
     direction: rtl;
+    overflow: hidden;
   }

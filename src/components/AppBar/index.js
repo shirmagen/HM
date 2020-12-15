@@ -4,15 +4,16 @@ import { IconButton } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import SearchBar from '../../components/SearchBar';
 import Drawer from '../../components/Drawer';
+import styled, { css, keyframes } from 'styled-components';
 
-import styled from 'styled-components';
+const hideAppBarAnimation = keyframes`
+  from {
+    transform: translate(0,0);
+  }
 
-const ApolloAppBar = styled(Row)`
-  color: grey;
-  position: absolute;
-  width: 30%;
-  height: 50px;
-  background: white;
+  to {
+    transform: translate(110%,0);
+  }
 `;
 
 const ApolloMenu = styled(IconButton)`
@@ -20,7 +21,7 @@ const ApolloMenu = styled(IconButton)`
   height: 50px;
 `;
 
-export default () => {
+export default ({ isMainMode }) => {
   const [openedDrawer, setOpenedDrawer] = useState(false);
 
   const openDrawer = () => {
@@ -30,6 +31,19 @@ export default () => {
   const closeDrawer = () => {
     setOpenedDrawer(false);
   };
+
+  const ApolloAppBar = styled(Row)`
+    color: grey;
+    position: absolute;
+    width: 30%;
+    height: 50px;
+    background: white;
+    animation: ${isMainMode == false
+      ? css`
+          ${hideAppBarAnimation} 1s ease-in forwards
+        `
+      : ``};
+  `;
 
   return (
     <ApolloAppBar>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Map from '../components/Map';
 import VerticalToolBar from '../components/VerticalToolBar';
 import CreateButton from '../components/CreateNew';
@@ -6,12 +6,16 @@ import ApolloAppBar from '../components/AppBar';
 import { Row } from 'mui-flex-layout';
 
 export default () => {
+  const [isMainMode, setMainMode] = useState(true);
+  
+  const props = {isMainMode, setMainMode};
+  
   return (
     <Row width={'100%'} height={'100%'}>
-      <ApolloAppBar/>
+      <ApolloAppBar {...props}/>
         <Map />
-      <VerticalToolBar />
-      <CreateButton />
+      <VerticalToolBar {...props}/>
+      <CreateButton {...props}/>
     </Row>
   );
 };

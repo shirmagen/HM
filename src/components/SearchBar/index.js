@@ -5,7 +5,7 @@ import { Search } from '@material-ui/icons';
 import SearchBox from './SearchBox';
 import styled from 'styled-components';
 
-const HMSearchIcon = styled(Search)`
+const ApolloSearchIcon = styled(Search)`
   position: absolute;
   padding-top: 15px;
   paddinig-right: 5px;
@@ -16,7 +16,7 @@ export default () => {
   return (
     <Row width={'100%'}>
       <SearchBox />
-      <HMSearchIcon />
+      <ApolloSearchIcon />
     </Row>
   );
 };
