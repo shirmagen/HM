@@ -17,6 +17,16 @@ const hideAppBarAnimation = keyframes`
   }
 `;
 
+const showToolBarAnimation = keyframes`
+from {
+  transform: translate(110%,0);
+}
+
+to {
+  transform: translate(0,0);
+}
+`;
+
 const ApolloMenu = styled(IconButton)`
   width: 50px;
   height: 50px;
@@ -39,11 +49,12 @@ export default ({ isMainMode }) => {
     width: 30%;
     height: 50px;
     background: white;
-    animation: ${isMainMode == false
+    z-index: 1;
+    animation: ${isMainMode != 'main'
       ? css`
           ${hideAppBarAnimation} 1s ease-in forwards
         `
-      : ``};
+      : css`${showToolBarAnimation} 1s ease-in forwards`};
   `;
 
   return (

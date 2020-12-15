@@ -13,16 +13,26 @@ const hideCreationAnimation = keyframes`
   }
 `;
 
+const showCreationAnimation = keyframes`
+  from {
+    transform: translate(0,100px);
+  }
+
+  to {
+    transform: translate(0,0);
+  }
+`;
+
 export default ({ isMainMode }) => {
   const ApolloCreateButton = styled(IconButton)`
     position: absolute;
     right: 0;
     bottom: 0;
-    animation: ${isMainMode == false
+    animation: ${isMainMode != 'main'
       ? css`
           ${hideCreationAnimation} 1s ease-in forwards
         `
-      : ``};
+      : css`${showCreationAnimation} 1s ease-in forwards`};
   `;
 
   return (

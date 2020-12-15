@@ -7,7 +7,7 @@ import DrawToolBar from '../components/DrawToolBar';
 import { Row } from 'mui-flex-layout';
 
 export default () => {
-  const [isMainMode, setMainMode] = useState(true);
+  const [isMainMode, setMainMode] = useState('main');
   
   const props = {isMainMode, setMainMode};
   
@@ -17,7 +17,7 @@ export default () => {
         <Map />
       <VerticalToolBar {...props}/>
       <CreateButton {...props}/>
-      <DrawToolBar/>
+      <DrawToolBar {...props}/>
     </Row>
   );
 };
