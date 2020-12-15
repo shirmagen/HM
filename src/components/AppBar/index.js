@@ -10,8 +10,9 @@ import styled from 'styled-components';
 const ApolloAppBar = styled(Row)`
   color: grey;
   position: absolute;
-  width: 300px;
+  width: 30%;
   height: 50px;
+  background: white;
 `;
 
 const ApolloMenu = styled(IconButton)`
