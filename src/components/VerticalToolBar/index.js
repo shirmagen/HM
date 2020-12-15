@@ -20,7 +20,7 @@ export default ({isMainMode, setMainMode}) => {
     left: 0;
     bottom: 0;
     animation: ${isMainMode == false ? css`${hideToolBarAnimation} 1s ease-in forwards` : ``};
-  `;
+    `;
 
   const [toolBarVisibility, setVisibleToolbar] = useState('visible');
 

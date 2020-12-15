@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Row } from 'mui-flex-layout';
 import { IconButton } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
-import SearchBar from '../../components/SearchBar';
-import Drawer from '../../components/Drawer';
+import SearchBar from '../SearchBar';
+import Drawer from '../Drawer';
+import CreateNew from '../CreateNew'
 import styled, { css, keyframes } from 'styled-components';
 
 const hideAppBarAnimation = keyframes`
