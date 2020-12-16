@@ -3,7 +3,7 @@ import { IconButton, ButtonGroup } from '@material-ui/core';
 import { Create, FlashOn, QueryBuilderOutlined } from '@material-ui/icons';
 import styled, { css, keyframes } from 'styled-components';
 
-export default ({ isMainMode, setMainMode }) => {
+export default ({ currentMode, setMode }) => {
   const hideToolBarAnimation = keyframes`
   from {
     transform: translate(0,0);
@@ -28,7 +28,7 @@ export default ({ isMainMode, setMainMode }) => {
     top: 0;
     left: 0;
     bottom: 0;
-    animation: ${isMainMode != 'main'
+    animation: ${currentMode != 'main'
       ? css`
           ${hideToolBarAnimation} 1s ease-in forwards
         `
@@ -39,10 +39,10 @@ export default ({ isMainMode, setMainMode }) => {
 
   return (
     <ApolloVerticalToolBar orientation="vertical" color="primary">
-      <IconButton onClick={() => setMainMode('draw')}>
+      <IconButton onClick={() => setMode('draw')}>
         <Create />
       </IconButton>
-      <IconButton onClick={() => setMainMode('flash')}>
+      <IconButton onClick={() => setMode('flash')}>
         <FlashOn />
       </IconButton>
       <IconButton>

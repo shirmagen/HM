@@ -3,7 +3,7 @@ import { Row } from 'mui-flex-layout';
 import React, { useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 
-export default ({ isMainMode, setMainMode }) => {
+export default ({ currentMode, setMode }) => {
   const [value, setValue] = useState(30);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -14,7 +14,7 @@ export default ({ isMainMode, setMainMode }) => {
     left: 100px;
     bottom: 100px;
     height: 50px;
-    ${isMainMode != 'flash'
+    ${currentMode != 'flash'
       ? css`
           visibility: hidden;
         `

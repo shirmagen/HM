@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import React from 'react';
 import { Row } from 'mui-flex-layout';
 import { Search } from '@material-ui/icons';
 import SearchBox from './SearchBox';

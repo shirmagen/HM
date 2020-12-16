@@ -23,12 +23,12 @@ const showCreationAnimation = keyframes`
   }
 `;
 
-export default ({ isMainMode }) => {
+export default ({ currentMode }) => {
   const ApolloCreateButton = styled(IconButton)`
     position: absolute;
     right: 0;
     bottom: 0;
-    animation: ${isMainMode != 'main'
+    animation: ${currentMode != 'main'
       ? css`
           ${hideCreationAnimation} 1s ease-in forwards
         `

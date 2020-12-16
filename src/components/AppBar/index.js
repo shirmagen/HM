@@ -32,7 +32,7 @@ const ApolloMenu = styled(IconButton)`
   height: 50px;
 `;
 
-export default ({ isMainMode }) => {
+export default ({ currentMode }) => {
   const [openedDrawer, setOpenedDrawer] = useState(false);
 
   const openDrawer = () => {
@@ -50,7 +50,7 @@ export default ({ isMainMode }) => {
     height: 50px;
     background: white;
     z-index: 1;
-    animation: ${isMainMode != 'main'
+    animation: ${currentMode != 'main'
       ? css`
           ${hideAppBarAnimation} 1s ease-in forwards
         `

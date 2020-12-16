@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const ApolloInnerImageZoom = styled(InnerImageZoom)`
 .iiz {
   margin: 0;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   display: inline-block;
   cursor: zoom-in;

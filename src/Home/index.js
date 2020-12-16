@@ -8,9 +8,9 @@ import { Row } from 'mui-flex-layout';
 import FlashMode from '../components/FlashMode';
 
 export default () => {
-  const [isMainMode, setMainMode] = useState('main');
+  const [currentMode, setMode] = useState('main');
   
-  const props = {isMainMode, setMainMode};
+  const props = {currentMode, setMode};
   
   return (
     <Row width={'100%'} height={'100%'}>

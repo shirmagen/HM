@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IconButton, ButtonGroup } from '@material-ui/core';
 import {
   BorderColorOutlined,
@@ -6,27 +6,15 @@ import {
   ChangeHistoryOutlined,
   CloseOutlined,
   ColorizeOutlined,
-  Create,
-  FlashOn,
   GestureOutlined,
-  QueryBuilderOutlined,
   RadioButtonUncheckedOutlined,
   StopOutlined,
 } from '@material-ui/icons';
+import ModeComponent from '../Mode/index';
 import styled, { css, keyframes } from 'styled-components';
 
-export default ({ isMainMode, setMainMode }) => {
-  const hideToolBarAnimation = keyframes`
-  from {
-    transform: translate(0,0);
-  }
-
-  to {
-    transform: translate(-40px,0);
-  }
-`;
-
-  const showToolBarAnimation = keyframes`
+export default ({ currentMode, setMode }) => {
+  const showAnimation = keyframes`
   from {
     transform: translate(0,100px);
   }
@@ -36,6 +24,14 @@ export default ({ isMainMode, setMainMode }) => {
   }
 `;
 
+  const hideAnimation = css`
+    visibility: hidden;
+  `;
+
+  const transition = ` visibility 1s ease-in forwards`;
+
+  const props = { currentMode, showAnimation, hideAnimation, modeName: 'draw', transition };
+
   const ApolloDrawToolBar = styled(ButtonGroup)`
     position: absolute;
     left: 20px;
@@ -44,56 +40,41 @@ export default ({ isMainMode, setMainMode }) => {
     border-color: gray;
     border-style: outset;
     border-width: thin;
-    ${isMainMode != 'draw'
-      ? css`
-          visibility: hidden;
-        `
-      : css`
-          animation: ${showToolBarAnimation} 1s ease-in forwards;
-        `};
-    transition: visibility 1s ease-in forwards;
+    z-index: 2;
   `;
-  //
-  //   const [toolBarVisibility, setVisibleToolbar] = useState('visible');
-
-  //   const showToolBar = () => {
-  //     setVisibleToolbar('visible');
-  //   };
-
-  //   const hideToolBar = () => {
-  //     setMainMode(false);
-  //   };
 
   return (
-    <ApolloDrawToolBar color="primary">
-      <IconButton>
-        <BorderColorOutlined />
-      </IconButton>
-      <IconButton>
-        <BrushOutlined />
-      </IconButton>
-      <IconButton>
-        <ChangeHistoryOutlined />
-      </IconButton>
-      <IconButton>
-        <ColorizeOutlined />
-      </IconButton>
-      <IconButton>
-        <RadioButtonUncheckedOutlined />
-      </IconButton>
-      <IconButton>
-        <GestureOutlined />
-      </IconButton>
-      <IconButton>
-        <StopOutlined />
-      </IconButton>
-      <IconButton
-        onClick={() => {
-          setMainMode('main');
-        }}
-      >
-        <CloseOutlined />
-      </IconButton>
-    </ApolloDrawToolBar>
+    <ModeComponent {...props}>
+      <ApolloDrawToolBar color="primary">
+        <IconButton>
+          <BorderColorOutlined />
+        </IconButton>
+        <IconButton>
+          <BrushOutlined />
+        </IconButton>
+        <IconButton>
+          <ChangeHistoryOutlined />
+        </IconButton>
+        <IconButton>
+          <ColorizeOutlined />
+        </IconButton>
+        <IconButton>
+          <RadioButtonUncheckedOutlined />
+        </IconButton>
+        <IconButton>
+          <GestureOutlined />
+        </IconButton>
+        <IconButton>
+          <StopOutlined />
+        </IconButton>
+        <IconButton
+          onClick={() => {
+            setMode('main');
+          }}
+        >
+          <CloseOutlined />
+        </IconButton>
+      </ApolloDrawToolBar>
+    </ModeComponent>
   );
 };
