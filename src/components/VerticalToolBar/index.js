@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { IconButton, ButtonGroup } from '@material-ui/core';
 import { Create, FlashOn, QueryBuilderOutlined } from '@material-ui/icons';
+import Mode from '../Mode';
 import styled, { css, keyframes } from 'styled-components';
 
 export default ({ currentMode, setMode }) => {
-  const hideToolBarAnimation = keyframes`
+  const hideAnimation = keyframes`
   from {
     transform: translate(0,0);
   }
@@ -14,7 +15,7 @@ export default ({ currentMode, setMode }) => {
   }
 `;
 
-  const showToolBarAnimation = keyframes`
+  const showAnimation = keyframes`
   from {
     transform: translate(-40px,0);
   }
@@ -28,16 +29,12 @@ export default ({ currentMode, setMode }) => {
     top: 0;
     left: 0;
     bottom: 0;
-    animation: ${currentMode != 'main'
-      ? css`
-          ${hideToolBarAnimation} 1s ease-in forwards
-        `
-      : css`
-          ${showToolBarAnimation} 1s ease-in forwards
-        `};
   `;
 
+  const props = {currentMode, modeName: 'main', showAnimation, hideAnimation};
+
   return (
+    <Mode {...props}>
     <ApolloVerticalToolBar orientation="vertical" color="primary">
       <IconButton onClick={() => setMode('draw')}>
         <Create />
@@ -49,5 +46,6 @@ export default ({ currentMode, setMode }) => {
         <QueryBuilderOutlined />
       </IconButton>
     </ApolloVerticalToolBar>
+    </Mode>
   );
 };

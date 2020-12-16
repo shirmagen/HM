@@ -4,22 +4,22 @@ import { IconButton } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import SearchBar from '../SearchBar';
 import Drawer from '../Drawer';
-import CreateNew from '../CreateNew'
+import Mode from '../Mode'
 import styled, { css, keyframes } from 'styled-components';
 
-const hideAppBarAnimation = keyframes`
+const hideAnimation = keyframes`
   from {
     transform: translate(0,0);
   }
 
   to {
-    transform: translate(110%,0);
+    transform: translate(300px,0);
   }
 `;
 
-const showToolBarAnimation = keyframes`
+const showAnimation = keyframes`
 from {
-  transform: translate(110%,0);
+  transform: translate(300px,0);
 }
 
 to {
@@ -46,18 +46,16 @@ export default ({ currentMode }) => {
   const ApolloAppBar = styled(Row)`
     color: grey;
     position: absolute;
-    width: 30%;
+    width: 250px;
     height: 50px;
     background: white;
     z-index: 1;
-    animation: ${currentMode != 'main'
-      ? css`
-          ${hideAppBarAnimation} 1s ease-in forwards
-        `
-      : css`${showToolBarAnimation} 1s ease-in forwards`};
-  `;
+`;
+
+const props = {currentMode, modeName:'main', hideAnimation, showAnimation}
 
   return (
+    <Mode {...props}>
     <ApolloAppBar>
       <ApolloMenu onClick={openDrawer}>
         <Menu />
@@ -65,5 +63,6 @@ export default ({ currentMode }) => {
       <SearchBar />
       <Drawer onClose={closeDrawer} opened={openedDrawer} />
     </ApolloAppBar>
+    </Mode>
   );
 };

@@ -24,13 +24,19 @@ export default ({ currentMode, setMode }) => {
   }
 `;
 
-  const hideAnimation = css`
-    visibility: hidden;
+  const hideAnimation = keyframes`
+  from {
+    transform: translate(0,0);
+  }
+
+  to {
+    transform: translate(0,100px);
+  }
   `;
 
   const transition = ` visibility 1s ease-in forwards`;
 
-  const props = { currentMode, showAnimation, hideAnimation, modeName: 'draw', transition };
+  const props = { currentMode, showAnimation, modeName: 'draw'};
 
   const ApolloDrawToolBar = styled(ButtonGroup)`
     position: absolute;

@@ -1,15 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-export default ({currentMode, showAnimation, hideAnimation, modeName, transition,children}) => { 
+export default ({currentMode, showAnimation, hideAnimation, modeName, children}) => { 
     const Mode = styled.div`
     ${currentMode == modeName
-      ? css`
-      animation: ${showAnimation} 1s ease-in forwards;
-    `
-      : hideAnimation};
-    transition: ${transition};
-    fill: blue;
+      ? css`animation: ${showAnimation} 1s ease-in forwards;`
+      : 
+        (hideAnimation ? 
+        css`animation: ${hideAnimation} 1s ease-in forwards` :
+        css`visibility: hidden`)};
   `;
 
   return (
