@@ -10,7 +10,7 @@ import {
   RadioButtonUncheckedOutlined,
   StopOutlined,
 } from '@material-ui/icons';
-import ModeComponent from '../Mode/index';
+import ModeComponent from '../Mode';
 import styled, { css, keyframes } from 'styled-components';
 
 export default ({ currentMode, setMode }) => {

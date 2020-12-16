@@ -5,7 +5,7 @@ import { Menu } from '@material-ui/icons';
 import SearchBar from '../SearchBar';
 import Drawer from '../Drawer';
 import Mode from '../Mode'
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const hideAnimation = keyframes`
   from {
@@ -61,7 +61,7 @@ const props = {currentMode, modeName:'main', hideAnimation, showAnimation}
         <Menu />
       </ApolloMenu>
       <SearchBar />
-      <Drawer onClose={closeDrawer} opened={openedDrawer} />
+      <Drawer onClose={closeDrawer} opened={openedDrawer}/>
     </ApolloAppBar>
     </Mode>
   );
