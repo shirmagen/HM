@@ -1,6 +1,20 @@
-import App from './App';
 import React from 'react';
-import ReactDOM from "react-dom";
+import { render } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import App from './App';
+import Router from './routes';
 import '../styles.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const rootComponentRender = () =>
+  render(
+    // <App>
+    <AppContainer>
+      <Router />
+    </AppContainer>,
+    // </App>,
+    document.querySelector('#root')
+  );
+
+rootComponentRender();
+
+module.hot.accept();
