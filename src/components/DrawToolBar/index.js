@@ -10,8 +10,8 @@ import {
   RadioButtonUncheckedOutlined,
   StopOutlined,
 } from '@material-ui/icons';
-import ModeComponent from '../Mode';
-import styled, { css, keyframes } from 'styled-components';
+import Mode from '../Mode';
+import styled, { keyframes } from 'styled-components';
 
 export default ({ currentMode, setMode }) => {
   const showAnimation = keyframes`
@@ -23,18 +23,6 @@ export default ({ currentMode, setMode }) => {
     transform: translate(0,0);
   }
 `;
-
-  const hideAnimation = keyframes`
-  from {
-    transform: translate(0,0);
-  }
-
-  to {
-    transform: translate(0,100px);
-  }
-  `;
-
-  const transition = ` visibility 1s ease-in forwards`;
 
   const props = { currentMode, showAnimation, modeName: 'draw'};
 
@@ -50,7 +38,7 @@ export default ({ currentMode, setMode }) => {
   `;
 
   return (
-    <ModeComponent {...props}>
+    <Mode {...props}>
       <ApolloDrawToolBar color="primary">
         <IconButton>
           <BorderColorOutlined />
@@ -81,6 +69,6 @@ export default ({ currentMode, setMode }) => {
           <CloseOutlined />
         </IconButton>
       </ApolloDrawToolBar>
-    </ModeComponent>
+    </Mode>
   );
 };
