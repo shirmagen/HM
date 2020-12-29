@@ -4,7 +4,7 @@ import { IconButton } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import SearchBar from '../SearchBar';
 import Drawer from '../Drawer';
-import Mode from '../Mode'
+import Mode from '../Mode';
 import styled, { keyframes } from 'styled-components';
 
 const hideAnimation = keyframes`
@@ -50,19 +50,19 @@ export default ({ currentMode }) => {
     height: 50px;
     background: white;
     z-index: 1;
-`;
+  `;
 
-const props = {currentMode, modeName:'main', hideAnimation, showAnimation}
+  const props = { currentMode, modeName: 'main', hideAnimation, showAnimation };
 
   return (
     <Mode {...props}>
-    <ApolloAppBar>
-      <ApolloMenu onClick={openDrawer}>
-        <Menu />
-      </ApolloMenu>
-      <SearchBar />
-      <Drawer onClose={closeDrawer} opened={openedDrawer}/>
-    </ApolloAppBar>
+      <ApolloAppBar>
+        <ApolloMenu onClick={openDrawer}>
+          <Menu />
+        </ApolloMenu>
+        <SearchBar />
+        <Drawer onClose={closeDrawer} opened={openedDrawer} />
+      </ApolloAppBar>
     </Mode>
   );
 };

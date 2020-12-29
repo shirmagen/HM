@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { IconButton, ButtonGroup } from '@material-ui/core';
 import { Create, FlashOn, QueryBuilderOutlined } from '@material-ui/icons';
 import Mode from '../Mode';
 import styled, { css, keyframes } from 'styled-components';
 import { useHistory } from 'react-router';
+import { HomeContext } from '../../Home/HomeContext';
 
-export default ({ currentMode, setMode }) => {
+export default () => {
+  const { currentMode, setMode } = useContext(HomeContext);
   const hideAnimation = keyframes`
   from {
     transform: translate(0,0);
@@ -32,6 +34,7 @@ export default ({ currentMode, setMode }) => {
     bottom: 0;
   `;
 
+  console.log(`vertical currentMode ${currentMode}`);
   const props = { currentMode, modeName: 'main', showAnimation, hideAnimation };
   let history = useHistory();
 
@@ -49,7 +52,7 @@ export default ({ currentMode, setMode }) => {
           }}
         >
           <Create />
-        </IconButton>
+        </IconButton>{' '}
         <IconButton onClick={() => setMode('flash')}>
           <FlashOn />
         </IconButton>

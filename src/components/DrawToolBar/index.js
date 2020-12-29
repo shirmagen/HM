@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { IconButton, ButtonGroup } from '@material-ui/core';
 import {
   BorderColorOutlined,
@@ -11,9 +11,14 @@ import {
   StopOutlined,
 } from '@material-ui/icons';
 import Mode from '../Mode';
+import { HomeContext } from '../../Home/HomeContext';
 import styled, { keyframes } from 'styled-components';
+import { useHistory } from 'react-router';
 
-export default ({ currentMode, setMode }) => {
+export default () => {
+  const { currentMode, setMode } = useContext(HomeContext);
+  let history = useHistory();
+
   const showAnimation = keyframes`
   from {
     transform: translate(0,100px);
@@ -24,7 +29,7 @@ export default ({ currentMode, setMode }) => {
   }
 `;
 
-  const props = { currentMode, showAnimation, modeName: 'draw'};
+  const props = { currentMode, showAnimation, modeName: 'draw' };
 
   const ApolloDrawToolBar = styled(ButtonGroup)`
     position: absolute;
@@ -38,7 +43,7 @@ export default ({ currentMode, setMode }) => {
   `;
 
   return (
-    <Mode {...props}>
+    <Mode>
       <ApolloDrawToolBar color="primary">
         <IconButton>
           <BorderColorOutlined />
@@ -64,6 +69,7 @@ export default ({ currentMode, setMode }) => {
         <IconButton
           onClick={() => {
             setMode('main');
+            history.push('/');
           }}
         >
           <CloseOutlined />
