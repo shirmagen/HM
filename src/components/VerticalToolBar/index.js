@@ -3,6 +3,7 @@ import { IconButton, ButtonGroup } from '@material-ui/core';
 import { Create, FlashOn, QueryBuilderOutlined } from '@material-ui/icons';
 import Mode from '../Mode';
 import styled, { css, keyframes } from 'styled-components';
+import { useHistory } from 'react-router';
 
 export default ({ currentMode, setMode }) => {
   const hideAnimation = keyframes`
@@ -31,21 +32,31 @@ export default ({ currentMode, setMode }) => {
     bottom: 0;
   `;
 
-  const props = {currentMode, modeName: 'main', showAnimation, hideAnimation};
+  const props = { currentMode, modeName: 'main', showAnimation, hideAnimation };
+  let history = useHistory();
+
+  const handleClick = () => {
+    history.push('/draw');
+  };
 
   return (
     <Mode {...props}>
-    <ApolloVerticalToolBar orientation="vertical" color="primary">
-      <IconButton onClick={() => setMode('draw')}>
-        <Create />
-      </IconButton>
-      <IconButton onClick={() => setMode('flash')}>
-        <FlashOn />
-      </IconButton>
-      <IconButton>
-        <QueryBuilderOutlined />
-      </IconButton>
-    </ApolloVerticalToolBar>
+      <ApolloVerticalToolBar orientation="vertical" color="primary">
+        <IconButton
+          onClick={() => {
+            setMode('draw');
+            handleClick();
+          }}
+        >
+          <Create />
+        </IconButton>
+        <IconButton onClick={() => setMode('flash')}>
+          <FlashOn />
+        </IconButton>
+        <IconButton>
+          <QueryBuilderOutlined />
+        </IconButton>
+      </ApolloVerticalToolBar>
     </Mode>
   );
 };

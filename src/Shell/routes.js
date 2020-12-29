@@ -1,5 +1,7 @@
 import React from 'react';
 import Home from '../Home';
+import Song from '../components/Forms/SongForm';
+import DrawToolBar from '../components/DrawToolBar';
 
 const base = {
   layout: Home,
@@ -11,6 +13,11 @@ let routes = [
     path: '/',
     name: 'home',
     component: Home,
+  },
+  {
+    path: '/draw',
+    name: 'draw',
+    component: DrawToolBar,
   },
 ];
 
