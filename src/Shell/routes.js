@@ -2,6 +2,7 @@ import React from 'react';
 import Home from '../Home';
 import Song from '../components/Forms/SongForm';
 import DrawToolBar from '../components/DrawToolBar';
+import LoadingScreen from '../components/LoadingScreen';
 
 const base = {
   layout: Home,

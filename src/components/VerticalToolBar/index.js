@@ -34,7 +34,6 @@ export default () => {
     bottom: 0;
   `;
 
-  console.log(`vertical currentMode ${currentMode}`);
   const props = { currentMode, modeName: 'main', showAnimation, hideAnimation };
   let history = useHistory();
 
@@ -43,23 +42,20 @@ export default () => {
   };
 
   return (
-    <Mode {...props}>
-      <ApolloVerticalToolBar orientation="vertical" color="primary">
-        <IconButton
-          onClick={() => {
-            setMode('draw');
-            handleClick();
-          }}
-        >
-          <Create />
-        </IconButton>{' '}
-        <IconButton onClick={() => setMode('flash')}>
-          <FlashOn />
-        </IconButton>
-        <IconButton>
-          <QueryBuilderOutlined />
-        </IconButton>
-      </ApolloVerticalToolBar>
-    </Mode>
+    <ApolloVerticalToolBar orientation="vertical" color="primary">
+      <IconButton
+        onClick={() => {
+          handleClick();
+        }}
+      >
+        <Create />
+      </IconButton>
+      <IconButton onClick={() => setMode('flash')}>
+        <FlashOn />
+      </IconButton>
+      <IconButton>
+        <QueryBuilderOutlined />
+      </IconButton>
+    </ApolloVerticalToolBar>
   );
 };

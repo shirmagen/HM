@@ -11,14 +11,13 @@ import HomeContext from './HomeContext';
 export default () => {
   return (
     <HomeContext>
-      {/* <Row width={'100%'} height={'100%'}> */}
-      {/* <ApolloAppBar /> */}
-      {/* <Map /> */}
-      <VerticalToolBar />
-      {/* <CreateButton /> */}
-      <DrawToolBar />
-      {/* <FlashMode /> */}
-      {/* </Row> */}
+      <Row width={'100%'} height={'100%'}>
+        {/* <ApolloAppBar /> */}
+        <Map />
+        <VerticalToolBar />
+        {/* <CreateButton /> */}
+        {/* <FlashMode /> */}
+      </Row>
     </HomeContext>
   );
 };

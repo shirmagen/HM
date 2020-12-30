@@ -14,9 +14,12 @@ import Mode from '../Mode';
 import { HomeContext } from '../../Home/HomeContext';
 import styled, { keyframes } from 'styled-components';
 import { useHistory } from 'react-router';
+import Map from '../Map';
+import { Row } from 'mui-flex-layout';
 
 export default () => {
   const { currentMode, setMode } = useContext(HomeContext);
+  console.log(currentMode);
   let history = useHistory();
 
   const showAnimation = keyframes`
@@ -43,7 +46,8 @@ export default () => {
   `;
 
   return (
-    <Mode>
+    <Row width={'100%'} height={'100%'}>
+      <Map />
       <ApolloDrawToolBar color="primary">
         <IconButton>
           <BorderColorOutlined />
@@ -75,6 +79,6 @@ export default () => {
           <CloseOutlined />
         </IconButton>
       </ApolloDrawToolBar>
-    </Mode>
+    </Row>
   );
 };
