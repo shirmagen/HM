@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { IconButton, ButtonGroup } from '@material-ui/core';
 import {
   BorderColorOutlined,
@@ -10,29 +10,23 @@ import {
   RadioButtonUncheckedOutlined,
   StopOutlined,
 } from '@material-ui/icons';
-import Mode from '../Mode';
-import { HomeContext } from '../../Home/HomeContext';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { useHistory } from 'react-router';
 import Map from '../Map';
 import { Row } from 'mui-flex-layout';
 
 export default () => {
-  const { currentMode, setMode } = useContext(HomeContext);
-  console.log(currentMode);
   let history = useHistory();
 
-  const showAnimation = keyframes`
-  from {
-    transform: translate(0,100px);
-  }
+  //   const showAnimation = keyframes`
+  //   from {
+  //     transform: translate(0,100px);
+  //   }
 
-  to {
-    transform: translate(0,0);
-  }
-`;
-
-  const props = { currentMode, showAnimation, modeName: 'draw' };
+  //   to {
+  //     transform: translate(0,0);
+  //   }
+  // `;
 
   const ApolloDrawToolBar = styled(ButtonGroup)`
     position: absolute;
@@ -72,7 +66,6 @@ export default () => {
         </IconButton>
         <IconButton
           onClick={() => {
-            setMode('main');
             history.push('/');
           }}
         >

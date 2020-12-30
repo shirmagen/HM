@@ -1,8 +1,7 @@
-import React from 'react';
 import Home from '../Home';
-import Song from '../components/Forms/SongForm';
 import DrawToolBar from '../components/DrawToolBar';
-import LoadingScreen from '../components/LoadingScreen';
+import FlashMode from '../components/FlashMode';
+import SongForm from '../components/Forms/SongForm';
 
 const base = {
   layout: Home,
@@ -19,6 +18,15 @@ let routes = [
     path: '/draw',
     name: 'draw',
     component: DrawToolBar,
+  },
+  {
+    path: '/flash',
+    name: 'flash',
+    component: FlashMode,
+  },
+  {
+    name: 'create-new',
+    component: SongForm,
   },
 ];
 
