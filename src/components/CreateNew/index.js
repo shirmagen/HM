@@ -23,7 +23,7 @@ import styled, { keyframes } from 'styled-components';
 //   }
 // `;
 
-export default ({ currentMode }) => {
+export default ({ currentMode, onClick }) => {
   const ApolloCreateButton = styled(IconButton)`
     position: absolute;
     left: 0;
@@ -32,7 +32,7 @@ export default ({ currentMode }) => {
 
   return (
     <ApolloCreateButton>
-      <IconButton color="primary">
+      <IconButton onClick={onClick} color="primary">
         <AddCircle />
       </IconButton>
     </ApolloCreateButton>
