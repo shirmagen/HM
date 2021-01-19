@@ -20,14 +20,14 @@ const FormBox = styled(Box)`
 const SumbmitButton = styled(Button)`
   margin: 50px 0;
 `;
-const CreateCard = styled(Card)`
+const FormCard = styled(Card)`
   max-width: 80%;
   max-height: 80%;
   display: flex;
   align-items: center;
   margin-top: 60px;
 `;
-const CreateCardContent = styled(CardContent)`
+const FormCardContent = styled(CardContent)`
   display: flex;
   align-items: center;
   margin-top: 60px;
@@ -36,8 +36,8 @@ const CreateCardContent = styled(CardContent)`
 export default ({ onSubmit, children }) => {
   return (
     <Row width={'100%'} height={'100%'} justifyContent="center" style={{ background: 'lightgrey' }}>
-      <CreateCard>
-        <CreateCardContent>
+      <FormCard>
+        <FormCardContent>
           <FormBox>
             <form onSubmit={onSubmit}>
               {children}
@@ -49,8 +49,8 @@ export default ({ onSubmit, children }) => {
           <BackgroundImageBox>
             <img src={'../../../../assets/1.jpg'} />
           </BackgroundImageBox>
-        </CreateCardContent>
-      </CreateCard>
+        </FormCardContent>
+      </FormCard>
     </Row>
   );
 };

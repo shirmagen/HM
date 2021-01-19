@@ -1,8 +1,6 @@
 import Home from '../Home';
 import DrawToolBar from '../components/DrawToolBar';
 import FlashMode from '../components/FlashMode';
-import CreateNewForm from '../components/CreateNew/CreateNewForm';
-import { CreateNewFolder } from '@material-ui/icons';
 import CreateNewSong from '../Home/CreateNewSong';
 
 const base = {

@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import { Row } from 'mui-flex-layout';
 import { Box, Card, CardContent } from '@material-ui/core';
 import styled from 'styled-components';
-import CreateNewForm from '../../components/CreateNew/CreateNewForm';
+import CreateNewForm from '../../components/FormCard';
 
 export default () => {
   const validationSchema = yup.object({
