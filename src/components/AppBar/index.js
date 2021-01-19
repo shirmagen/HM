@@ -6,26 +6,6 @@ import SearchBar from '../SearchBar';
 import Drawer from '../Drawer';
 import styled from 'styled-components';
 
-// const hideAnimation = keyframes`
-//   from {
-//     transform: translate(0,0);
-//   }
-
-//   to {
-//     transform: translate(300px,0);
-//   }
-// `;
-
-// const showAnimation = keyframes`
-// from {
-//   transform: translate(300px,0);
-// }
-
-// to {
-//   transform: translate(0,0);
-// }
-// `;
-
 const ApolloMenu = styled(IconButton)`
   width: 50px;
   height: 50px;

@@ -16,7 +16,7 @@ import Map from '../Map';
 import { Row } from 'mui-flex-layout';
 
 export default () => {
-  let history = useHistory();
+  let { push } = useHistory();
 
   //   const showAnimation = keyframes`
   //   from {
@@ -66,7 +66,7 @@ export default () => {
         </IconButton>
         <IconButton
           onClick={() => {
-            history.push('/');
+            push('/');
           }}
         >
           <CloseOutlined />

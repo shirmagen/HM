@@ -31,14 +31,14 @@ export default () => {
     bottom: 0;
   `;
 
-  let history = useHistory();
+  const { push } = useHistory();
 
   const goToDrawMode = () => {
-    history.push('/draw');
+    push('/draw');
   };
 
   const goToFlashMode = () => {
-    history.push('/flash');
+    push('/flash');
   };
 
   return (
