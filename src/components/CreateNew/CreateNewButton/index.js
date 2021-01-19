@@ -12,7 +12,7 @@ export default () => {
   `;
 
   const { push } = useHistory();
-  const goToCreateNew = () => push('/create-new');
+  const goToCreateNew = () => push('/create-new-song');
 
   return (
     <ApolloCreateButton color="primary" onClick={() => goToCreateNew()}>
