@@ -1,7 +1,7 @@
 import Home from '../Home';
 import DrawToolBar from '../components/DrawToolBar';
 import FlashMode from '../components/FlashMode';
-import SongForm from '../components/Forms/SongForm';
+import CreateNewForm from '../components/CreateNew/CreateNewForm';
 
 const base = {
   layout: Home,
@@ -25,8 +25,9 @@ let routes = [
     component: FlashMode,
   },
   {
+    path: '/create-new',
     name: 'create-new',
-    component: SongForm,
+    component: CreateNewForm,
   },
 ];
 
