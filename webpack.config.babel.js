@@ -1,8 +1,24 @@
 import { resolve } from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { HotModuleReplacementPlugin } from 'webpack';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 module.exports = {
+  output: {
+      path: resolve(__dirname, './dist'),
+      filename: './[name].[hash].js',
+      chunkFilename: './[name].[chunkhash].js',
+      publicPath: '/'
+    },
+    optimization: {
+      minimizer: [new UglifyJsPlugin()]
+    },
+     devServer: {
+      port: 9090,
+      inline: true,
+      historyApiFallback: true,
+      hot: true
+    },
   module: {
     rules: [
       {
