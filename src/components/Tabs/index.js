@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import TabPanel from './Tab';
-import { Tabs, Tab as MuiTab } from '@material-ui/core';
+import Tab from './Tab';
+import { TextField, Button } from '@material-ui/core';
 import {
   Phone as PhoneIcon,
   Favorite as FavoriteIcon,
@@ -11,13 +11,23 @@ import {
   ThumbUp,
 } from '@material-ui/icons';
 import { DataGrid } from '@material-ui/data-grid';
+import styled from 'styled-components';
 
 export default () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue) => {
     setValue(newValue);
   };
+
+  const ApolloDataGrid = styled(DataGrid)`
+    height: 50%;
+    width: 100%;
+  `;
+
+  const TabButton = styled(Button)`
+    flex: 1;
+  `;
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -52,45 +62,34 @@ export default () => {
     { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
   ];
 
+  const TabButtons = styled.div`
+    display: flex;
+    justify-content: space-between;
+  `;
+
   return (
     <>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        variant="scrollable"
-        scrollButtons="on"
-        indicatorColor="primary"
-        textColor="primary"
-      >
-        <MuiTab label="Item One" icon={<PhoneIcon />} />
-        <MuiTab label="Item Two" icon={<FavoriteIcon />} />
-        <MuiTab label="Item Three" icon={<PersonPinIcon />} />
-        <MuiTab label="Item Four" icon={<HelpIcon />} />
-        <MuiTab label="Item Five" icon={<ShoppingBasket />} />
-        <MuiTab label="Item Six" icon={<ThumbDown />} />
-        <MuiTab label="Item Seven" icon={<ThumbUp />} />
-      </Tabs>
-      <TabPanel value={value} index={0}>
-        <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel>
+      <TabButtons>
+        <TabButton index={1} onClick={() => handleChange(1)}>
+          Tab 1
+        </TabButton>
+        <TabButton index={2} onClick={() => handleChange(2)}>
+          Tab 2
+        </TabButton>
+        <TabButton index={3} onClick={() => handleChange(3)}>
+          Tab 3
+        </TabButton>
+      </TabButtons>
+
+      <Tab index={1} value={value}>
+        <span>blah1</span>
+      </Tab>
+      <Tab index={2} value={value}>
+        <span>blah2</span>
+      </Tab>
+      <Tab index={3} value={value}>
+        <span>blah3</span>
+      </Tab>
     </>
   );
 };
