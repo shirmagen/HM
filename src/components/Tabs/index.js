@@ -12,9 +12,18 @@ import {
 } from '@material-ui/icons';
 import { DataGrid } from '@material-ui/data-grid';
 import styled from 'styled-components';
+import FirstTab from './FirstTab';
 
 export default () => {
-  const [value, setValue] = useState(1);
+  const tabs = [
+    { index: 1, component: <FirstTab /> },
+    { index: 2, component: <span>2</span> },
+    { index: 3, component: <span>3</span> },
+  ];
+
+  console.log(tabs);
+
+  const [value, setValue] = useState(tabs[0].index);
 
   const handleChange = (newValue) => {
     setValue(newValue);
@@ -64,32 +73,22 @@ export default () => {
 
   const TabButtons = styled.div`
     display: flex;
-    justify-content: space-between;
   `;
 
   return (
     <>
       <TabButtons>
-        <TabButton index={1} onClick={() => handleChange(1)}>
-          Tab 1
-        </TabButton>
-        <TabButton index={2} onClick={() => handleChange(2)}>
-          Tab 2
-        </TabButton>
-        <TabButton index={3} onClick={() => handleChange(3)}>
-          Tab 3
-        </TabButton>
+        {tabs.map(({ index }) => (
+          <TabButton index={index} onClick={() => handleChange(index)}>
+            Tab{index}
+          </TabButton>
+        ))}
       </TabButtons>
-
-      <Tab index={1} value={value}>
-        <span>blah1</span>
-      </Tab>
-      <Tab index={2} value={value}>
-        <span>blah2</span>
-      </Tab>
-      <Tab index={3} value={value}>
-        <span>blah3</span>
-      </Tab>
+      {tabs.map(({ index, component }) => (
+        <Tab index={index} value={value}>
+          {component}
+        </Tab>
+      ))}
     </>
   );
 };
