@@ -37,12 +37,12 @@ module.exports = {
   plugins: [
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './client/index.html',
       filename: './index.html',
     }),
   ],
   output: {
-    path: resolve(__dirname, './dist'),
+    path: resolve(__dirname, './dist/client'),
     filename: './[name].[hash].js',
     chunkFilename: './[name].[chunkhash].js',
   },
@@ -51,5 +51,9 @@ module.exports = {
     inline: true,
     historyApiFallback: true,
     hot: true,
+  },
+  entry: {
+    main: ['react-hot-loader/patch', './client/index.js'],
+    vendor: ['lodash', 'react', '@material-ui/core'],
   },
 };

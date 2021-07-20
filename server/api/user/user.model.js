@@ -1,6 +1,5 @@
 import pify from 'pify';
 import { Schema } from 'mongoose';
-import { single as emailAddress } from 'email-address';
 import passportLocalMongoose from 'passport-local-mongoose';
 import createSeed from 'mongoose-dependent-seed';
 import seed from './user.seed';

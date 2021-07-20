@@ -42,7 +42,6 @@ const AuthWrapper = styled(Column)`
 `;
 
 export default () => {
-  const { open } = useAlert();
   const { push } = useHistory();
   const { login } = useAuthApi();
   const { setAuth } = useAuth();
@@ -66,7 +65,7 @@ export default () => {
       <LoginPaper elevation={0}>
         <Row width={'100%'} height={'100%'} alignItems={'center'} justifyContent={'flex-start'}>
           <Column alignItems={'center'} width={'40%'} height={'100%'} justifyContent={'center'}>
-            <Title>{'Listify'}</Title>
+            <Title>{'HM'}</Title>
           </Column>
           <LayoutDivider />
           <AuthWrapper
