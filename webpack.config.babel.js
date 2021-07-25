@@ -51,6 +51,17 @@ module.exports = {
     inline: true,
     historyApiFallback: true,
     hot: true,
+    proxy: {
+      '/api': {
+        target: `http://localhost:9393`
+      },
+      '/auth': {
+        target: `http://localhost:9393`
+      },
+      '/ws': {
+        target: `http://localhost:9393`
+      }
+    }
   },
   entry: {
     main: ['react-hot-loader/patch', './client/index.js'],

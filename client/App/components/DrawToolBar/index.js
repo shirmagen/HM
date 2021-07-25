@@ -15,6 +15,17 @@ import { useHistory } from 'react-router';
 import Map from '../Map';
 import { Row } from 'mui-flex-layout';
 
+const ApolloDrawToolBar = styled(ButtonGroup)`
+position: absolute;
+left: 20px;
+bottom: 20px;
+height: 50px;
+border-color: gray;
+border-style: outset;
+border-width: thin;
+z-index: 2;
+`;
+
 export default () => {
   let { push } = useHistory();
 
@@ -28,16 +39,6 @@ export default () => {
   //   }
   // `;
 
-  const ApolloDrawToolBar = styled(ButtonGroup)`
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-    height: 50px;
-    border-color: gray;
-    border-style: outset;
-    border-width: thin;
-    z-index: 2;
-  `;
 
   return (
     <Row width={'100%'} height={'100%'}>
