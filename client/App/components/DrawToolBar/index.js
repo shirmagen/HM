@@ -16,28 +16,19 @@ import Map from '../Map';
 import { Row } from 'mui-flex-layout';
 
 const ApolloDrawToolBar = styled(ButtonGroup)`
-position: absolute;
-left: 20px;
-bottom: 20px;
-height: 50px;
-border-color: gray;
-border-style: outset;
-border-width: thin;
-z-index: 2;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  height: 50px;
+  border-color: gray;
+  border-style: outset;
+  border-width: thin;
+  z-index: 2;
 `;
 
- export default () => {
+export default () => {
   let { push } = useHistory();
 
-  //   const showAnimation = keyframes`
-  //   from {
-  //     transform: translate(0,100px);
-  //   }
-
-  //   to {
-  //     transform: translate(0,0);
-  //   }
-  // `;
   return (
     <Row width={'100%'} height={'100%'}>
       <Map />
