@@ -26,7 +26,7 @@ border-width: thin;
 z-index: 2;
 `;
 
-export default () => {
+ export default () => {
   let { push } = useHistory();
 
   //   const showAnimation = keyframes`
@@ -38,8 +38,6 @@ export default () => {
   //     transform: translate(0,0);
   //   }
   // `;
-
-
   return (
     <Row width={'100%'} height={'100%'}>
       <Map />
@@ -67,7 +65,7 @@ export default () => {
         </IconButton>
         <IconButton
           onClick={() => {
-            push('/');
+            push('/home');
           }}
         >
           <CloseOutlined />
