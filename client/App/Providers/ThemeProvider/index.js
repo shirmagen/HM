@@ -1,12 +1,12 @@
 import React, { useContext, createContext } from 'react';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import { createTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider } from 'styled-components';
 import initialState from './initial.theme';
 
 const ThemeContext = createContext(initialState);
 
 export default props => {
-  const theme = createMuiTheme(initialState);
+  const theme = createTheme(initialState);
 
   const { children } = props;
 

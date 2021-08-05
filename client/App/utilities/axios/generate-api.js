@@ -7,7 +7,6 @@ export const generateApi = ({ instance }) => {
     setLoading(true);
     try {
       const { data } = await instance.get(url);
-
       return data;
     } finally {
       setLoading(false);
@@ -16,9 +15,8 @@ export const generateApi = ({ instance }) => {
 
   const post = async ({ url, body }) => {
     setLoading(true);
-    try {
-      const { data } = await instance.post(url, body);
-
+    try {  
+      const { data } = await instance.post(url, body); 
       return data;
     } finally {
       setLoading(false);

@@ -18,7 +18,7 @@ const authenticate = (req, res, next, cb) =>
 
         return reject(error);
       }
-
+      
       return resolve(cb(user));
     })(req, res, next);
   });

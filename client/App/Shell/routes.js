@@ -10,9 +10,9 @@ const base = {
 
 let routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
-    component: Home,
+    component: Home
   },
   {
     path: '/draw',

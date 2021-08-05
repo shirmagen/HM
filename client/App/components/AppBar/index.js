@@ -11,6 +11,15 @@ const ApolloMenu = styled(IconButton)`
   height: 50px;
 `;
 
+const ApolloAppBar = styled(Row)`
+color: grey;
+position: absolute;
+width: 250px;
+height: 50px;
+background: white;
+z-index: 1;
+`;
+
 export default () => {
   const [openedDrawer, setOpenedDrawer] = useState(false);
 
@@ -21,15 +30,6 @@ export default () => {
   const closeDrawer = () => {
     setOpenedDrawer(false);
   };
-
-  const ApolloAppBar = styled(Row)`
-    color: grey;
-    position: absolute;
-    width: 250px;
-    height: 50px;
-    background: white;
-    z-index: 1;
-  `;
 
   return (
     <ApolloAppBar>

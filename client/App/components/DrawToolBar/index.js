@@ -15,7 +15,18 @@ import { useHistory } from 'react-router';
 import Map from '../Map';
 import { Row } from 'mui-flex-layout';
 
-export default () => {
+const ApolloDrawToolBar = styled(ButtonGroup)`
+position: absolute;
+left: 20px;
+bottom: 20px;
+height: 50px;
+border-color: gray;
+border-style: outset;
+border-width: thin;
+z-index: 2;
+`;
+
+ export default () => {
   let { push } = useHistory();
 
   //   const showAnimation = keyframes`
@@ -27,18 +38,6 @@ export default () => {
   //     transform: translate(0,0);
   //   }
   // `;
-
-  const ApolloDrawToolBar = styled(ButtonGroup)`
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-    height: 50px;
-    border-color: gray;
-    border-style: outset;
-    border-width: thin;
-    z-index: 2;
-  `;
-
   return (
     <Row width={'100%'} height={'100%'}>
       <Map />
@@ -66,7 +65,7 @@ export default () => {
         </IconButton>
         <IconButton
           onClick={() => {
-            push('/');
+            push('/home');
           }}
         >
           <CloseOutlined />

@@ -4,6 +4,13 @@ import { Create, FlashOn, QueryBuilderOutlined } from '@material-ui/icons';
 import styled from 'styled-components';
 import { useHistory } from 'react-router';
 
+const ApolloVerticalToolBar = styled(ButtonGroup)`
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  `;
+
 export default () => {
   //   const hideAnimation = keyframes`
   //   from {
@@ -24,12 +31,6 @@ export default () => {
   //     transform: translate(0,0);
   //   }
   // `;
-  const ApolloVerticalToolBar = styled(ButtonGroup)`
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-  `;
 
   const { push } = useHistory();
 
