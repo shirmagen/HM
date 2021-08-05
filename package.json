@@ -83,6 +83,7 @@
     "formik-material-ui": "^3.0.1",
     "helmet": "^4.6.0",
     "in-production": "^1.0.1",
+    "jss-rtl": "^0.3.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.13.3",
     "mongoose-dependent-seed": "^0.6.1",

@@ -15,8 +15,9 @@ export const generateApi = ({ instance }) => {
 
   const post = async ({ url, body }) => {
     setLoading(true);
-    try {  
-      const { data } = await instance.post(url, body); 
+    try {
+      const { data } = await instance.post(url, body);
+
       return data;
     } finally {
       setLoading(false);
@@ -26,9 +27,9 @@ export const generateApi = ({ instance }) => {
   const deleteMethod = async ({ url }) => {
     setLoading(true);
     try {
-      const { data } = await instance.delete(url);
-
-      return data;
+      await instance.delete(url);
+    } catch (err) {
+      console.log(err);
     } finally {
       setLoading(false);
     }

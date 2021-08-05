@@ -12,6 +12,9 @@ export const userClient = {
   instance: axios.create({
     baseURL: `/api/users/`,
     responseType: 'json',
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
   }),
   authRequired: true,
 };
