@@ -1,15 +1,19 @@
 import React from 'react';
 import { Snackbar } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 
-export default ({ opened, handleClose, message }) => (
+export default ({ opened, handleClose, message, severity = 'success' }) => (
   <Snackbar
     open={opened}
-    message={message}
     onClose={handleClose}
     anchorOrigin={{
       vertical: 'bottom',
-      horizontal: 'left'
+      horizontal: 'right',
     }}
     autoHideDuration={4000}
-  />
+  >
+    <Alert onClose={handleClose} severity={severity}>
+      {message}
+    </Alert>
+  </Snackbar>
 );

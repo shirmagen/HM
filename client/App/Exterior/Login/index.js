@@ -49,14 +49,13 @@ export default () => {
   const handleLogin = async ({ email, password }, { setSubmitting }) => {
     try {
       const data = await login({ email, password });
-
       await setAuth(data);
-
+      
       push('/home');
     } catch (error) {
+      alert(error)
       setSubmitting(false);
-
-      open({ message: error });
+    
     }
   };
 

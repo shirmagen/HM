@@ -33,7 +33,7 @@
   "homepage": "https://github.com/shirmagen/hm#readme",
   "devDependencies": {
     "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.14.8",
     "@babel/node": "^7.14.7",
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.8.7",
@@ -54,7 +54,7 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^2.0.12",
-    "react": "^16.14.0",
+    "react": "^17.0.0",
     "react-dom": "^16.14.0",
     "react-hot-loader": "^4.13.0",
     "style-loader": "^2.0.0",
@@ -83,11 +83,13 @@
     "formik-material-ui": "^3.0.1",
     "helmet": "^4.6.0",
     "in-production": "^1.0.1",
+    "jss-rtl": "^0.3.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.13.3",
     "mongoose-dependent-seed": "^0.6.1",
     "morgan": "^1.10.0",
     "mui-flex-layout": "^1.1.1",
+    "npm-run-all": "^4.1.5",
     "passport": "^0.4.1",
     "passport-local-mongoose": "^6.1.0",
     "prettier": "^2.2.1",
@@ -97,6 +99,6 @@
     "socket.io": "^4.1.3",
     "socketio-jwt": "^4.6.2",
     "styled-components": "^5.2.1",
-    "yup": "^0.32.8"
+    "yup": "^0.32.9"
   }
 }

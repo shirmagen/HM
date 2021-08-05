@@ -3,17 +3,26 @@ import Alert from './Snackbar';
 
 const AlertContext = createContext();
 
-export default props => {
+const severities = {
+  success: 'success',
+  error: 'error',
+  warning: 'warning',
+};
+
+export default (props) => {
   const [message, setMessage] = useState(null);
   const [opened, setOpened] = useState(false);
+  const [severity, setSeverity] = useState(severities.success);
 
-  const open = ({ message }) => {
+  const open = (message, severity) => {
     setMessage(message);
     setOpened(true);
+    setSeverity(severity);
   };
 
   const close = () => {
     setMessage(null);
+    setSeverity(null);
     setOpened(false);
   };
 
@@ -23,11 +32,12 @@ export default props => {
     <AlertContext.Provider
       value={{
         close,
-        open
+        open,
+        severities,
       }}
       {...props}
     >
-      <Alert message={message} opened={opened} handleClose={close} />
+      <Alert message={message} opened={opened} handleClose={close} severity={`${severity}`} />
       {children}
     </AlertContext.Provider>
   );

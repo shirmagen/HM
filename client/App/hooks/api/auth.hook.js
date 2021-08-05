@@ -7,7 +7,9 @@ export default () => {
   const { get, post } = generateApi({ instance });
   const { setLoggedOut } = useAuth();
 
-  const login = async ({ email, password }) => post({ url: '/login', body: { email, password } });
+  const login = async ({ email, password }) => 
+    post({ url: '/login', body: { email, password } })
+   
 
   const logout = () => {
     setLoggedOut();

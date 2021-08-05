@@ -1,6 +1,14 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Redirect, Route } from 'react-router';
+import { string } from 'yup/lib/locale';
+import { useAuth } from '../../Providers/AuthProvider';
 
 export default ({ component: Component, authRequired, ...rest }) => {
-  return <Route {...rest} render={(props) => <Component {...props} />} />;
+  const {getToken} = useAuth();
+  return <Route {...rest} render={
+    (props) => ((authRequired && getToken() != null) || !authRequired)
+    ?
+      <Component {...props} />
+    : <Redirect to='/login'/>
+  } />;
 };

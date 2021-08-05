@@ -11,6 +11,11 @@ export const show = async ({ params: { username } }) => {
   return user;
 };
 
+export const getAll = async () => {
+  const users = await User.find();
+  return [...users];
+};
+
 export const getByMail = async ({ params: { email } }) => {
   const user = await User.findOne({ email });
 
@@ -21,15 +26,31 @@ export const getByMail = async ({ params: { email } }) => {
   return user;
 };
 
-export const update = async ({ user, params: { id }, body }) => {
-  if (!user._id.equals(id) && !user.admin) {
-    throw createError(403);
+export const post = async ({ body }) => {
+  const { name, password, email, username } = body;
+
+  const user = await User.findOne({ $or: [{ email: email }, { username: username }] });
+
+  if (user) {
+    throw createError(409, 'שם משתמש או מייל תפוסים כבר');
   }
 
+  const newUser = await User.create({ name, username, email, password });
+
+  return newUser;
+};
+
+export const update = async ({ params: { id }, body }) => {
   const { name, email } = body;
+  const result = await User.findByIdAndUpdate(id, { $set: { name, email } }, { new: true });
+  if (!result) {
+    throw createError(404, 'משתמש אינו נמצא');
+  }
+  return result;
+};
 
-  const result = await User.findByIdAndUpdate(id, { $set: { name, email } });
-
+export const deleteUser = async ({ params: { id } }) => {
+  const result = await User.deleteOne({ _id: id });
   if (!result) {
     throw createError(404);
   }
