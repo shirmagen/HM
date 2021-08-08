@@ -22,7 +22,6 @@ export default props => {
 
   const close = () => {
     setMessage(null);
-    setSeverity(null);
     setOpened(false);
     setSeverity('');
   };
