@@ -2,6 +2,7 @@ import Home from './Home';
 import DrawToolBar from '../components/DrawToolBar';
 import FlashMode from '../components/FlashMode';
 import CreateNewSong from './Home/CreateNewSong';
+import MangeUsers from './Home/MangeUsers';
 
 const base = {
   layout: Home,
@@ -10,7 +11,7 @@ const base = {
 
 let routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: Home,
   },
@@ -28,6 +29,11 @@ let routes = [
     path: '/create-new-song',
     name: 'create-new-song',
     component: CreateNewSong,
+  },
+  {
+    path: '/users',
+    name: 'users',
+    component: MangeUsers,
   },
 ];
 

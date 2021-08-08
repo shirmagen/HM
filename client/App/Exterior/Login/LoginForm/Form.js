@@ -22,10 +22,24 @@ export default () => {
 
       <FullForm>
         <Padded>
-          <Field fullWidth type="email" label="Email" name="email" component={TextField} />
+          <Field
+            fullWidth
+            type="email"
+            label="Email"
+            name="email"
+            data-testid="email"
+            component={TextField}
+          />
         </Padded>
         <Padded>
-          <Field fullWidth type="password" label="Password" name="password" component={TextField} />
+          <Field
+            fullWidth
+            type="password"
+            label="Password"
+            name="password"
+            component={TextField}
+            data-testid="password"
+          />
         </Padded>
         <Padded m={1}>
           <Button fullWidth color={'primary'} variant={'contained'} type={'submit'}>
