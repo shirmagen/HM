@@ -1,7 +1,6 @@
 import passport from 'passport';
 import createError from 'http-errors';
 import { signToken } from '../../auth';
-import User from '../user/user.model';
 
 const authenticate = (req, res, next, cb) =>
   new Promise((resolve, reject) => {
