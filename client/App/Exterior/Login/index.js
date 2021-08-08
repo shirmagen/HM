@@ -45,6 +45,7 @@ export default () => {
   const { push } = useHistory();
   const { login } = useAuthApi();
   const { setAuth } = useAuth();
+  const { open, severities } = useAlert();
 
   const handleLogin = async ({ email, password }, { setSubmitting }) => {
     try {
@@ -52,7 +53,7 @@ export default () => {
       await setAuth(data);
       push('/home');
     } catch (error) {
-      alert(error);
+      open({ message: 'מייל או סיסמא שגויים', severity: severities.error });
       setSubmitting(false);
     }
   };
