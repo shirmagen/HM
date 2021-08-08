@@ -5,6 +5,7 @@ import Exterior from '.';
 
 const base = {
   layout: Exterior,
+  authRequired: false,
 };
 
 export default [

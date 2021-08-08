@@ -5,7 +5,7 @@ import CreateNewSong from './Home/CreateNewSong';
 
 const base = {
   layout: Home,
-  authRequired: false,
+  authRequired: true,
 };
 
 let routes = [
