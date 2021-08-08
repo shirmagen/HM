@@ -5,6 +5,7 @@ export const { 500: ERROR_MAIN } = deepOrange;
 export const INITIAL_PALETTE_TYPE = 'light';
 
 export default {
+  direction: 'rtl',
   palette: {
     error: {
       main: ERROR_MAIN
