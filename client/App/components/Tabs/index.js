@@ -14,6 +14,15 @@ import { DataGrid } from '@material-ui/data-grid';
 import styled from 'styled-components';
 import FirstTab from './FirstTab';
 
+const ApolloDataGrid = styled(DataGrid)`
+    height: 50%;
+    width: 100%;
+  `;
+
+  const TabButton = styled(Button)`
+    flex: 1;
+  `;
+
 export default () => {
   const tabs = [
     { index: 1, component: <FirstTab /> },
@@ -26,15 +35,6 @@ export default () => {
   const handleChange = (newValue) => {
     setValue(newValue);
   };
-
-  const ApolloDataGrid = styled(DataGrid)`
-    height: 50%;
-    width: 100%;
-  `;
-
-  const TabButton = styled(Button)`
-    flex: 1;
-  `;
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
