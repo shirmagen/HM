@@ -2,7 +2,6 @@ import React from 'react';
 import { Route } from 'react-router';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-
 import App from './App';
 import ResolvedRoute from './App/components/ResolvedRoute';
 import shellRoutes from './App/Shell/routes';
