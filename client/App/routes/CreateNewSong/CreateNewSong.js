@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import TextField from '@material-ui/core/TextField';
-import CreateNewForm from '../../../components/FormCard';
+import CreateNewForm from '../../components/FormCard/FormCard';
 
 export default () => {
   const validationSchema = yup.object({

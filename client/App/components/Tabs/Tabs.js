@@ -1,18 +1,9 @@
 import React, { useState } from 'react';
 import Tab from './Tab';
-import { TextField, Button } from '@material-ui/core';
-import {
-  Phone as PhoneIcon,
-  Favorite as FavoriteIcon,
-  PersonPin as PersonPinIcon,
-  Help as HelpIcon,
-  ShoppingBasket,
-  ThumbDown,
-  ThumbUp,
-} from '@material-ui/icons';
+import { Button } from '@material-ui/core';
 import { DataGrid } from '@material-ui/data-grid';
 import styled from 'styled-components';
-import FirstTab from './FirstTab';
+import FirstTab from './FirstTab/FirstTab';
 
 export default () => {
   const tabs = [

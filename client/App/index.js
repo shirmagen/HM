@@ -2,7 +2,7 @@ import React from 'react';
 import { CssBaseline } from '@material-ui/core';
 import AxiosWrapper from './utilities/axios/interceptors';
 import AppProviders from './Providers';
-import Layout from './components/Layout';
+import Layout from './components/Layout/Layout';
 
 export default ({ children }) => (
   <AppProviders>

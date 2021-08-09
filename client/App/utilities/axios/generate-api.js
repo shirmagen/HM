@@ -3,48 +3,31 @@ import { useLoading } from '../../Providers/LoadingProvider';
 export const generateApi = ({ instance }) => {
   const { setLoading } = useLoading();
 
-  const get = async ({ url }) => {
+  const baseApiFunction = async ({ url, callback, body }) => {
     setLoading(true);
     try {
-      const { data } = await instance.get(url);
+      const { data } = await callback(url, body);
 
       return data;
     } finally {
       setLoading(false);
     }
+  };
+
+  const get = async ({ url }) => {
+    baseApiFunction({ url, callback: instance.get });
   };
 
   const post = async ({ url, body }) => {
-    setLoading(true);
-    try {
-      const { data } = await instance.post(url, body);
-
-      return data;
-    } finally {
-      setLoading(false);
-    }
+    baseApiFunction({ url, callback: instance.get, body });
   };
 
   const deleteMethod = async ({ url }) => {
-    setLoading(true);
-    try {
-      const { data } = await instance.delete(url);
-
-      return data;
-    } finally {
-      setLoading(false);
-    }
+    baseApiFunction({ url, callback: instace.delete });
   };
 
   const put = async ({ url, body }) => {
-    setLoading(true);
-    try {
-      const { data } = await instance.put(url, body);
-
-      return data;
-    } finally {
-      setLoading(false);
-    }
+    baseApiFunction({ url, callback: instace.put, body });
   };
 
   return { get, post, put, deleteMethod };

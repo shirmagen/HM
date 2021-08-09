@@ -12,21 +12,11 @@ import {
 } from '@material-ui/icons';
 import styled from 'styled-components';
 import { useHistory } from 'react-router';
-import Map from '../Map';
+// import Map from '.';
 import { Row } from 'mui-flex-layout';
 
 export default () => {
   let { push } = useHistory();
-
-  //   const showAnimation = keyframes`
-  //   from {
-  //     transform: translate(0,100px);
-  //   }
-
-  //   to {
-  //     transform: translate(0,0);
-  //   }
-  // `;
 
   const ApolloDrawToolBar = styled(ButtonGroup)`
     position: absolute;
@@ -41,7 +31,7 @@ export default () => {
 
   return (
     <Row width={'100%'} height={'100%'}>
-      <Map />
+      {/* <Map /> */}
       <ApolloDrawToolBar color="primary">
         <IconButton>
           <BorderColorOutlined />

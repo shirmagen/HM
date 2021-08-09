@@ -1,7 +1,7 @@
-import Home from './Home';
-import DrawToolBar from '../components/DrawToolBar';
-import FlashMode from '../components/FlashMode';
-import CreateNewSong from './Home/CreateNewSong';
+import Home from './Home/Home';
+import DrawToolBar from './DrawToolBar/DrawToolBar';
+import FlashMode from '../routes/FlashMode/FlashMode';
+import CreateNewSong from './CreateNewSong/CreateNewSong';
 
 const base = {
   layout: Home,

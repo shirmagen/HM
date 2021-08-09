@@ -1,6 +1,6 @@
 import React from 'react';
-import Landing from './Landing';
-import Login from './Login';
+import Landing from './Landing/Landing';
+import Login from './Login/Login';
 import Exterior from '.';
 
 const base = {

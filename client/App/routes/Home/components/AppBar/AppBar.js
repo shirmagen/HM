@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Row } from 'mui-flex-layout';
 import { IconButton } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
-import SearchBar from '../SearchBar';
-import Drawer from '../Drawer';
+import SearchBar from '../SearchBar/SearchBar';
+import Drawer from '../../../../components/Drawer/Drawer';
 import styled from 'styled-components';
 
 const ApolloMenu = styled(IconButton)`

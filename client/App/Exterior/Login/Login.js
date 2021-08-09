@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import useAuthApi from '../../hooks/api/auth.hook';
 import { useAlert } from '../../Providers/AlertProvider';
 import { useAuth } from '../../Providers/AuthProvider';
-import LoginForm from './LoginForm';
+import LoginForm from './LoginForm/LoginForm';
 
 const LoginPaper = styled(Paper)`
   && {

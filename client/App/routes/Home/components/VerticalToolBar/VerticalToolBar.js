@@ -5,25 +5,6 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router';
 
 export default () => {
-  //   const hideAnimation = keyframes`
-  //   from {
-  //     transform: translate(0,0);
-  //   }
-
-  //   to {
-  //     transform: translate(-40px,0);
-  //   }
-  // `;
-
-  //   const showAnimation = keyframes`
-  //   from {
-  //     transform: translate(-40px,0);
-  //   }
-
-  //   to {
-  //     transform: translate(0,0);
-  //   }
-  // `;
   const ApolloVerticalToolBar = styled(ButtonGroup)`
     position: absolute;
     top: 0;

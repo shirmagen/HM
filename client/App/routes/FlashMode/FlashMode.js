@@ -1,6 +1,5 @@
 import React from 'react';
-import Tabs from '../Tabs';
-import styled from 'styled-components';
+import Tabs from '../../components/Tabs/Tabs';
 
 export default () => {
   return <Tabs />;

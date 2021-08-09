@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row } from 'mui-flex-layout';
 import { Search } from '@material-ui/icons';
-import SearchBox from './SearchBox';
+import SearchBox from './SearchBox/SearchBox';
 import styled from 'styled-components';
 
 const ApolloSearchIcon = styled(Search)`
