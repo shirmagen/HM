@@ -5,20 +5,20 @@ import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 module.exports = {
   output: {
-      path: resolve(__dirname, './dist'),
-      filename: './[name].[hash].js',
-      chunkFilename: './[name].[chunkhash].js',
-      publicPath: '/'
-    },
-    optimization: {
-      minimizer: [new UglifyJsPlugin()]
-    },
-     devServer: {
-      port: 9090,
-      inline: true,
-      historyApiFallback: true,
-      hot: true
-    },
+    path: resolve(__dirname, './dist'),
+    filename: './[name].[hash].js',
+    chunkFilename: './[name].[chunkhash].js',
+    publicPath: '/',
+  },
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
+  },
+  devServer: {
+    port: 9090,
+    inline: true,
+    historyApiFallback: true,
+    hot: true,
+  },
   module: {
     rules: [
       {
@@ -69,15 +69,15 @@ module.exports = {
     hot: true,
     proxy: {
       '/api': {
-        target: `http://localhost:9393`
+        target: `http://localhost:9393`,
       },
       '/auth': {
-        target: `http://localhost:9393`
+        target: `http://localhost:9393`,
       },
       '/ws': {
-        target: `http://localhost:9393`
-      }
-    }
+        target: `http://localhost:9393`,
+      },
+    },
   },
   entry: {
     main: ['react-hot-loader/patch', './client/index.js'],
