@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Row } from 'mui-flex-layout';
 import { IconButton } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
-import SearchBar from '../SearchBar';
-import Drawer from '../Drawer';
+import {SearchBar} from '../SearchBar';
+import {ApolloDrawer} from '../Drawer';
 import styled from 'styled-components';
 
 const ApolloMenu = styled(IconButton)`
@@ -20,7 +20,7 @@ background: white;
 z-index: 1;
 `;
 
-export default () => {
+export const AppBar = () => {
   const [openedDrawer, setOpenedDrawer] = useState(false);
 
   const openDrawer = () => {
@@ -37,7 +37,7 @@ export default () => {
         <Menu />
       </ApolloMenu>
       <SearchBar />
-      <Drawer onClose={closeDrawer} opened={openedDrawer} />
+      <ApolloDrawer onClose={closeDrawer} opened={openedDrawer} />
     </ApolloAppBar>
   );
 };

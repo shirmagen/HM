@@ -1,7 +1,7 @@
 import React from 'react';
-import Landing from './Landing';
-import Login from './Login';
-import Exterior from '.';
+import {Landing} from './Landing';
+import {Login} from './Login';
+import {Exterior} from '.';
 
 const base = {
   layout: Exterior,

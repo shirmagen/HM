@@ -19,7 +19,7 @@ const getCountries = async ({ active, setOptions }) => {
   }
 };
 
-export default () => {
+export const SearchBox = () => {
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState([]);
   const loading = open && options.length === 0;

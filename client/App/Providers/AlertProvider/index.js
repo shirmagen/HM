@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
-import Alert from './Snackbar';
+import {ApolloAlert} from './Snackbar';
 
 const AlertContext = createContext();
 
@@ -9,7 +9,7 @@ const severities = {
   warning: 'warning',
 };
 
-export default props => {
+export const AlertProvider = props => {
   const [message, setMessage] = useState(null);
   const [opened, setOpened] = useState(false);
   const [severity, setSeverity] = useState(severities.success);
@@ -37,7 +37,7 @@ export default props => {
       }}
       {...props}
     >
-      <Alert message={message} opened={opened} handleClose={close} severity={severity} />
+      <ApolloAlert message={message} opened={opened} handleClose={close} severity={severity} />
       {children}
     </AlertContext.Provider>
   );

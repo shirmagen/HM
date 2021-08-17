@@ -1,15 +1,15 @@
 import React from 'react';
 import { CssBaseline } from '@material-ui/core';
-import AxiosWrapper from './utilities/axios/interceptors';
-import AppProviders from './Providers';
-import Layout from './components/Layout';
+import {AxiosWrapper} from './utilities/axios/interceptors';
+import {AppProviders} from './Providers';
+import {ApolloLayout} from './components/Layout';
 
-export default ({ children }) => (
+export const App = ({ children }) => (
   <AppProviders>
     <CssBaseline>
-      <Layout>
+      <ApolloLayout>
         <AxiosWrapper>{children}</AxiosWrapper>
-      </Layout>
+      </ApolloLayout>
     </CssBaseline>
   </AppProviders>
 );

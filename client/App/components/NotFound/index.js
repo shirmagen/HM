@@ -6,19 +6,19 @@ import styled from 'styled-components';
 
 import Image from '../../../assets/404.png';
 
-const NotFound = styled.img`
+const ApolloNotFound = styled.img`
   height: 33%;
   width: 33%;
 `;
 
-export default () => {
+export const NotFound = () => {
   const { push } = useHistory();
 
   const handleHome = () => push('/home');
 
   return (
     <Column justifyContent={'center'} alignItems={'center'} height={'100%'} width={'100%'}>
-      <NotFound src={Image} />
+      <ApolloNotFound src={Image} />
       <Padded p={2}>
         <Typography>{'The requested page was not found'}</Typography>
       </Padded>

@@ -2,13 +2,11 @@ import React from 'react';
 import { Row } from 'mui-flex-layout';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import styled from 'styled-components';
-import { Button, Card } from '@material-ui/core';
+import { Button} from '@material-ui/core';
 import { TextField } from 'formik-material-ui';
-import InputCard from './InputCard';
 import { Formik, Form, Field } from 'formik';
 
-export default () => {
+export const FirstTab = () => {
   // in the future there will be type and name
 
   const validationSchema = yup.object({

@@ -3,7 +3,7 @@ import { Redirect, Route } from 'react-router';
 import { string } from 'yup/lib/locale';
 import { useAuth } from '../../Providers/AuthProvider';
 
-export default ({ component: Component, authRequired, ...rest }) => {
+export const ResolvedRoute = ({ component: Component, authRequired, ...rest }) => {
   const { getToken } = useAuth();
 
   return (

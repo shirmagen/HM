@@ -9,7 +9,7 @@ const Logo = styled.img`
   height: 100px;
 `;
 
-const Landing = styled(Column)`
+const ApolloLanding = styled(Column)`
   background: linear-gradient(45deg, #000000f5, #004d79);
 `;
 
@@ -25,7 +25,7 @@ const AuthButton = styled(Button)`
   margin-right: 15px;
 `;
 
-export default () => {
+export const Landing = () => {
   const { push } = useHistory();
 
   const gotoLogin = () => {
@@ -33,7 +33,7 @@ export default () => {
   };
 
   return (
-    <Landing width={'100%'} height={'100%'}>
+    <ApolloLanding width={'100%'} height={'100%'}>
       <Row height={'15%'} width={'100%'} alignItems={'center'}>
         <Row width={'100%'} height={'100%'} alignItems={'center'}>
           <Row width={'100%'} alignItems={'center'} justifyContent={'space-between'}>
@@ -55,6 +55,6 @@ export default () => {
           </Row>
         </Row>
       </Row>
-    </Landing>
+    </ApolloLanding>
   );
 };

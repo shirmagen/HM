@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import Router from './routes';
+import {Router} from './routes';
 import '../styles.css';
 
 const rootComponentRender = () =>

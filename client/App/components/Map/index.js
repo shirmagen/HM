@@ -117,6 +117,6 @@ const ApolloInnerImageZoom = styled(InnerImageZoom)`
   transform: rotate(45deg);
 }
 `;
-export default () => (
+export const Map = () => (
   <ApolloInnerImageZoom src={Image} zoomSrc={Image} />
-)
+);

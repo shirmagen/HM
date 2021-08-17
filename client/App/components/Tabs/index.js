@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Tab from './Tab';
+import {Tab} from './Tab';
 import { TextField, Button } from '@material-ui/core';
 import {
   Phone as PhoneIcon,
@@ -12,7 +12,7 @@ import {
 } from '@material-ui/icons';
 import { DataGrid } from '@material-ui/data-grid';
 import styled from 'styled-components';
-import FirstTab from './FirstTab';
+import {FirstTab} from './FirstTab';
 
 const ApolloDataGrid = styled(DataGrid)`
     height: 50%;
@@ -23,7 +23,7 @@ const ApolloDataGrid = styled(DataGrid)`
     flex: 1;
   `;
 
-export default () => {
+export const Tabs = () => {
   const tabs = [
     { index: 1, component: <FirstTab /> },
     { index: 2, component: <span>2</span> },

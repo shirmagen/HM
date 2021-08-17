@@ -8,7 +8,7 @@ import { StylesProvider, jssPreset } from '@material-ui/core/styles';
 
 const ThemeContext = createContext(initialState);
 
-export default props => {
+export const ApolloThemeProvider = props => {
   const theme = createTheme(initialState);
   const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
 

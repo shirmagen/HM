@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row } from 'mui-flex-layout';
 import { Search } from '@material-ui/icons';
-import SearchBox from './SearchBox';
+import {SearchBox} from './SearchBox';
 import styled from 'styled-components';
 
 const ApolloSearchIcon = styled(Search)`
@@ -11,11 +11,10 @@ const ApolloSearchIcon = styled(Search)`
   margin: 8px;
 `;
 
-export default () => {
-  return (
+export const SearchBar = () =>
+  (
     <Row width={'100%'}>
-      <SearchBox />
-      <ApolloSearchIcon />
+      <SearchBox/>
+      <ApolloSearchIcon/>
     </Row>
   );
-};
