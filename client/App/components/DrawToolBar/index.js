@@ -12,7 +12,7 @@ import {
 } from '@material-ui/icons';
 import styled from 'styled-components';
 import { useHistory } from 'react-router';
-import Map from '../Map';
+import {Map} from '../Map';
 import { Row } from 'mui-flex-layout';
 
 const ApolloDrawToolBar = styled(ButtonGroup)`
@@ -26,7 +26,7 @@ const ApolloDrawToolBar = styled(ButtonGroup)`
   z-index: 2;
 `;
 
-export default () => {
+export const DrawToolBar = () => {
   let { push } = useHistory();
 
   return (

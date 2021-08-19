@@ -2,7 +2,7 @@ import React, { createContext, useState, useContext } from 'react';
 
 const LoadingContext = createContext();
 
-export default props => {
+export const LoadingProvider = props => {
   const [loading, setLoading] = useState(false);
 
   const { children } = props;

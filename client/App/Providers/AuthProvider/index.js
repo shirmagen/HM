@@ -13,7 +13,7 @@ const initialState = {
 
 const AuthContext = createContext(initialState);
 
-export default (props) => {
+export const AuthProvider = props => {
   const [user, setUser] = useState(null);
   const { getMyself } = useUserApi();
 

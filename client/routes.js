@@ -3,15 +3,15 @@ import { Route } from 'react-router';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
-import App from './App';
-import ResolvedRoute from './App/components/ResolvedRoute';
+import {App} from './App';
+import {ResolvedRoute} from './App/components/ResolvedRoute';
 import shellRoutes from './App/Shell/routes';
 import exteriorRoutes from './App/Exterior/routes';
-import NotFound from './App/components/NotFound';
+import {NotFound} from './App/components/NotFound';
 
 const routes = [...exteriorRoutes, ...shellRoutes];
 
-export default () => {
+export const Router = () => {
   const history = createBrowserHistory();
 
   return (

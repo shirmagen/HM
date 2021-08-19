@@ -8,7 +8,7 @@ const ApolloCreateButton = styled(IconButton)`
     left: 0;
     bottom: 0;
   `;
-export default () => {
+export const CreateButton = () => {
 
   const { push } = useHistory();
   const goToCreateNew = () => push('/create-new-song');

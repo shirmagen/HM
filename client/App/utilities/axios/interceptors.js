@@ -8,7 +8,7 @@ import {
 import { useAuth } from '../../Providers/AuthProvider';
 import clients from './clients';
 
-export default ({ children }) => {
+export const AxiosWrapper = ({ children }) => {
   const { setLoggedOut, getToken } = useAuth();
 
   const errorHandler = error => {

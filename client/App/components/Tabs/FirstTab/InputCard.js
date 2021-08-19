@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, TextField } from '@material-ui/core';
 
-export default ({ text, onKeyPress, value, onChange, error, helperText }) => {
+export const InputCard = ({ text, onKeyPress, value, onChange, error, helperText }) => {
   return (
     <Card style={{ padding: '8px', height: '50px', width: '70px', margin: '10px' }}>
       <TextField

@@ -3,7 +3,8 @@ import { Column, Row, Padded } from 'mui-flex-layout';
 import { TextField } from 'formik-material-ui';
 import { Button, Typography } from '@material-ui/core';
 import styled from 'styled-components';
-import { Form, Field } from 'formik';
+import { Form, Field, Formik } from 'formik';
+import schema from './login-form.schema';
 
 const FullForm = styled(Form)`
   width: 45%;
@@ -14,25 +15,28 @@ const Header = styled(Typography)`
   font-weight: bolder;
 `;
 
-export default () => {
-  return (
-    <Column height={'100%'} width={'100%'} justifyContent={'center'} alignItems={'center'}>
-      <Header variant={'h3'}>{'Log in'}</Header>
-      <Row height={'5%'} />
+const initialValues = { email: '', password: '' };
 
-      <FullForm>
-        <Padded>
-          <Field fullWidth type="email" label="Email" name="email" component={TextField} />
-        </Padded>
-        <Padded>
-          <Field fullWidth type="password" label="Password" name="password" component={TextField} />
-        </Padded>
-        <Padded m={1}>
-          <Button fullWidth color={'primary'} variant={'contained'} type={'submit'}>
-            {'Log in'}
-          </Button>
-        </Padded>
-      </FullForm>
-    </Column>
+export const LoginForm = ({ handleSubmit }) =>
+  (
+    <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={schema}>
+      <Column height={'100%'} width={'100%'} justifyContent={'center'} alignItems={'center'}>
+        <Header variant={'h3'}>{'Log in'}</Header>
+        <Row height={'5%'}/>
+
+        <FullForm>
+          <Padded>
+            <Field fullWidth type="email" label="Email" name="email" component={TextField}/>
+          </Padded>
+          <Padded>
+            <Field fullWidth type="password" label="Password" name="password" component={TextField}/>
+          </Padded>
+          <Padded m={1}>
+            <Button fullWidth color={'primary'} variant={'contained'} type={'submit'}>
+              {'Log in'}
+            </Button>
+          </Padded>
+        </FullForm>
+      </Column>
+    </Formik>
   );
-};

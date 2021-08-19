@@ -1,7 +1,7 @@
-import Home from './Home';
-import DrawToolBar from '../components/DrawToolBar';
-import FlashMode from '../components/FlashMode';
-import CreateNewSong from './Home/CreateNewSong';
+import {Home} from './Home';
+import {DrawToolBar} from '../components/DrawToolBar';
+import {Tabs} from '../components/Tabs';
+import {CreateNewSong} from './Home/CreateNewSong';
 
 const base = {
   layout: Home,
@@ -10,9 +10,9 @@ const base = {
 
 let routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
-    component: Home,
+    component: Home
   },
   {
     path: '/draw',
@@ -22,7 +22,7 @@ let routes = [
   {
     path: '/flash',
     name: 'flash',
-    component: FlashMode,
+    component: Tabs,
   },
   {
     path: '/create-new-song',

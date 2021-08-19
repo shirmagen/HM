@@ -2,7 +2,7 @@ import React from 'react';
 import { Snackbar } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 
-export default ({ opened, handleClose, message, severity = 'success' }) => (
+export const ApolloAlert = ({ opened, handleClose, message, severity = 'success' }) => (
   <Snackbar
     open={opened}
     onClose={handleClose}

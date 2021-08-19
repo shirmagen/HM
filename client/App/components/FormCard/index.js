@@ -33,8 +33,8 @@ const FormCardContent = styled(CardContent)`
   margin-top: 60px;
 `;
 
-export default ({ onSubmit, children }) => {
-  return (
+export const CreateNewForm = ({ onSubmit, children }) =>
+  (
     <Row width={'100%'} height={'100%'} justifyContent="center" style={{ background: 'lightgrey' }}>
       <FormCard>
         <FormCardContent>
@@ -47,10 +47,9 @@ export default ({ onSubmit, children }) => {
             </form>
           </FormBox>
           <BackgroundImageBox>
-            <img src={'../../../../assets/1.jpg'} />
+            <img src={'../../../../assets/1.jpg'}/>
           </BackgroundImageBox>
         </FormCardContent>
       </FormCard>
     </Row>
   );
-};

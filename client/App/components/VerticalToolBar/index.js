@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IconButton, ButtonGroup } from '@material-ui/core';
 import { Create, FlashOn, QueryBuilderOutlined, SupervisorAccount } from '@material-ui/icons';
 import styled from 'styled-components';
 import { useHistory } from 'react-router';
-import FlashMenu from './FlashMenu';
+import {FlashMenu} from './FlashMenu';
 
-const ApolloVerticalToolBar = styled(ButtonGroup)``;
+const ApolloVerticalToolBar = styled(ButtonGroup)`
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  `;
 
-export default () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+export const VerticalToolBar = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = !!anchorEl;
 
   const openMenu = ({ currentTarget }) => {
     setAnchorEl(currentTarget);
@@ -33,14 +38,14 @@ export default () => {
             goToRoute('/draw');
           }}
         >
-          <Create />
+          <Create/>
         </IconButton>
         <IconButton onClick={openMenu}>
-          <FlashOn />
+          <FlashOn/>
         </IconButton>
-        <FlashMenu anchorEl={anchorEl} open={open} onClose={closeMenu} />
+        <FlashMenu anchorEl={anchorEl} open={open} onClose={closeMenu}/>
         <IconButton>
-          <QueryBuilderOutlined />
+          <QueryBuilderOutlined/>
         </IconButton>
         <IconButton>
           <SupervisorAccount

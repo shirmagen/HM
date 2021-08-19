@@ -1,17 +1,16 @@
 import React from 'react';
-import Map from '../../components/Map';
-import VerticalToolBar from '../../components/VerticalToolBar';
-import CreateButton from '../../components/CreateNew/CreateNewButton';
-import ApolloAppBar from '../../components/AppBar';
+import {Map} from '../../components/Map';
+import {VerticalToolBar} from '../../components/VerticalToolBar';
+import {CreateButton} from '../../components/CreateNew/CreateNewButton';
+import {AppBar} from '../../components/AppBar';
 import { Row } from 'mui-flex-layout';
 
-export default () => {
-  return (
+export const Home = () =>
+  (
     <Row width={'100%'} height={'100%'}>
-      <ApolloAppBar />
-      <Map />
-      <VerticalToolBar />
-      <CreateButton />
+      <AppBar/>
+      <Map/>
+      <VerticalToolBar/>
+      <CreateButton/>
     </Row>
   );
-};

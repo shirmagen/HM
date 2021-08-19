@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import useAuthApi from '../../hooks/api/auth.hook';
 import { useAlert } from '../../Providers/AlertProvider';
 import { useAuth } from '../../Providers/AuthProvider';
-import LoginForm from './LoginForm';
+import {LoginForm} from './LoginForm/Form';
 
 const LoginPaper = styled(Paper)`
   && {
@@ -33,7 +33,7 @@ const Icon = styled.img`
   margin: 10px;
 `;
 
-const Login = styled(Column)`
+const ApolloLogin = styled(Column)`
   background: linear-gradient(45deg, #000000f5, #004d79);
 `;
 
@@ -41,7 +41,7 @@ const AuthWrapper = styled(Column)`
   background-color: white;
 `;
 
-export default () => {
+export const Login = () => {
   const { push } = useHistory();
   const { login } = useAuthApi();
   const { setAuth } = useAuth();
@@ -51,6 +51,7 @@ export default () => {
     try {
       const data = await login({ email, password });
       await setAuth(data);
+      
       push('/home');
     } catch (error) {
       open({ message: 'מייל או סיסמא שגויים', severity: severities.error });
@@ -59,7 +60,7 @@ export default () => {
   };
 
   return (
-    <Login width={'100%'} height={'100%'} justifyContent={'center'} alignItems={'center'}>
+    <ApolloLogin width={'100%'} height={'100%'} justifyContent={'center'} alignItems={'center'}>
       <LoginPaper elevation={0}>
         <Row width={'100%'} height={'100%'} alignItems={'center'} justifyContent={'flex-start'}>
           <Column alignItems={'center'} width={'40%'} height={'100%'} justifyContent={'center'}>
@@ -76,6 +77,6 @@ export default () => {
           </AuthWrapper>
         </Row>
       </LoginPaper>
-    </Login>
+    </ApolloLogin>
   );
 };
