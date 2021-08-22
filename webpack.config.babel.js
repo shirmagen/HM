@@ -1,70 +1,21 @@
-import { resolve } from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { HotModuleReplacementPlugin } from 'webpack';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
+// Todo: Delete babel and all babel dependacies when we dont need that node server anymore
+
 module.exports = {
-  output: {
-    path: resolve(__dirname, './dist'),
-    filename: './[name].[hash].js',
-    chunkFilename: './[name].[chunkhash].js',
-    publicPath: '/',
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"]
   },
   optimization: {
     minimizer: [new UglifyJsPlugin()],
+    splitChunks: {
+      chunks: 'all'
+    }
   },
-  devServer: {
-    port: 9090,
-    inline: true,
-    historyApiFallback: true,
-    hot: true,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-          },
-        ],
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
-  },
-  plugins: [
-    new HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      template: './client/index.html',
-      filename: './index.html',
-    }),
-  ],
-  output: {
-    path: resolve(__dirname, './dist/client'),
-    filename: './[name].[hash].js',
-    chunkFilename: './[name].[chunkhash].js',
-  },
+  mode: 'development', // change this
   devServer: {
     port: process.env.WEBPACK_PORT,
-    inline: true,
     historyApiFallback: true,
     hot: true,
     proxy: {
@@ -79,8 +30,37 @@ module.exports = {
       },
     },
   },
+  module: {
+    rules: [
+      {
+        test: /\.(t|j)sx?$/,
+        use: { loader: 'ts-loader' },
+        exclude: /node_modules/
+      },
+      { enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'source-map-loader'
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        type: 'asset/resource'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './client/index.html',
+      filename: './index.html',
+    }),
+  ],
   entry: {
-    main: ['react-hot-loader/patch', './client/index.js'],
+    main: ['react-hot-loader/patch', './client/index.tsx'],
     vendor: ['lodash', 'react', '@material-ui/core'],
   },
+  devtool: 'source-map'
 };
