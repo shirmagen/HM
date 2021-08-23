@@ -1,16 +1,15 @@
 import React from 'react';
-import {Map} from '../../components/Map';
-import {VerticalToolBar} from '../../components/VerticalToolBar';
-import {CreateButton} from '../../components/CreateNew/CreateNewButton';
-import {AppBar} from '../../components/AppBar';
-import { Row } from 'mui-flex-layout';
+import { Map } from '../../components/Map';
+import { VerticalToolBar } from '../../components/VerticalToolBar';
+import { Column, Row } from 'mui-flex-layout';
+import { ApolloFooterBar } from '../../components/FooterBar';
 
-export const Home = () =>
-  (
+export const Home = () => (
+  <Column>
     <Row width={'100%'} height={'100%'}>
-      <AppBar/>
-      <Map/>
-      <VerticalToolBar/>
-      <CreateButton/>
+      <Map />
+      <VerticalToolBar />
     </Row>
-  );
+    <ApolloFooterBar />
+  </Column>
+);
