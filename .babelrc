@@ -11,5 +11,5 @@
       }
     ]
   ],
-  "plugins": ["@babel/plugin-transform-runtime", "react-hot-loader/babel"]
+  "plugins": ["@babel/plugin-transform-runtime"]
 }

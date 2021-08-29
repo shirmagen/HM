@@ -34,8 +34,8 @@ export const FirstTab = () => {
     },
   });
 
-  const calculate = (event: KeyboardEvent) => {
-    if (event.key === 'Enter') {
+  const calculate = ({key}: KeyboardEvent) => {
+    if (key === 'Enter') {
       results.push(formik.values.email + formik.values.shir);
       console.log('done');
     }
