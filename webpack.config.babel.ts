@@ -14,7 +14,8 @@ module.exports = {
     minimizer: [new UglifyJsPlugin()],
     splitChunks: {
       chunks: 'all'
-    }
+    },
+    runtimeChunk: 'single'
   },
   mode: isDevelopment ? 'development' : 'production',
   devServer: {

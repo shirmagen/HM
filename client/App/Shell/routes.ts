@@ -1,10 +1,11 @@
-import {Home} from './Home';
-import {DrawToolBar} from '../components/DrawToolBar';
-import {Tabs} from '../components/Tabs';
-import {CreateNewSong} from './Home/CreateNewSong';
+import {Shell} from './Shell';
+import { DistributeSong } from './distribute-song/DistributeSong';
+import { Calculators } from './calculators/Calculators';
+import { ManageEntites } from './manage-entites/ManageEntites';
+import { Users } from './users/Users';
 
 const base = {
-  layout: Home,
+  layout: Shell,
   authRequired: true,
 };
 
@@ -12,22 +13,27 @@ let routes = [
   {
     path: '/home',
     name: 'home',
-    component: Home
+    component: Shell
   },
   {
-    path: '/draw',
-    name: 'draw',
-    component: DrawToolBar,
+    path: '/distribute-song',
+    name: 'distributeSong',
+    component: DistributeSong,
   },
   {
-    path: '/flash',
-    name: 'flash',
-    component: Tabs,
+    path: '/calculators',
+    name: 'calculators',
+    component: Calculators,
   },
   {
-    path: '/create-new-song',
-    name: 'create-new-song',
-    component: CreateNewSong,
+    path: '/manage-entities',
+    name: 'manageEntities',
+    component: ManageEntites,
+  },
+  {
+    path: '/users',
+    name: 'users',
+    component: Users,
   },
 ];
 

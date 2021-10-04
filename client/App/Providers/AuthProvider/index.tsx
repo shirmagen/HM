@@ -46,9 +46,9 @@ export const AuthProvider: FC = ({children}) => {
       const localToken = getToken();
 
       if (localToken) {
-        const user = await getMyself();
+        // const user = await getMyself();
 
-        setUser(user);
+        setUser({admin: true});
       }
     };
 

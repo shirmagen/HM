@@ -1,19 +1,14 @@
-import { blue } from '@material-ui/core/colors';
-
-const { A100: LIGHT_SECONDARY_MAIN } = blue;
-const LIGHT_BACKGROUND = '#fafafa';
-
 export default {
   palette: {
     type: 'light',
     primary: {
-      main: '#1648ff'
+      main: '#fcfcfc'
     },
     secondary: {
-      main: LIGHT_SECONDARY_MAIN
+      main: '#bbbbbb'
+    },
+    background: {
+      default: '#f1f1f1'
     }
-  },
-  background: {
-    default: LIGHT_BACKGROUND
   }
 };
