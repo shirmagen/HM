@@ -1,6 +1,6 @@
 declare module 'mui-flex-layout' {
   import { FC } from 'react';
-  import { BoxProps } from '@material-ui/core';
+  import { BoxProps } from '@mui/material';
 
   type Layout = {
     color: any

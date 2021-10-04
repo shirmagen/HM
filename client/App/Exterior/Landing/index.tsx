@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row, Column } from 'mui-flex-layout';
 import { useHistory } from 'react-router-dom';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Typography } from '@mui/material';
 
 const Logo = styled.img`
   margin-right: 15px;

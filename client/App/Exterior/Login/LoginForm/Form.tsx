@@ -1,7 +1,7 @@
 import React from 'react';
 import { Column, Row, Padded } from 'mui-flex-layout';
 import { TextField } from 'formik-material-ui';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Typography } from '@mui/material';
 import styled from 'styled-components';
 import { Form, Field, Formik, FormikHelpers } from 'formik';
 import schema from './login-form.schema';

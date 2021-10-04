@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row } from 'mui-flex-layout';
-import { Search } from '@material-ui/icons';
+import { Search } from '@mui/icons-material';
 import {SearchBox} from './SearchBox/SearchBar';
 import styled from 'styled-components';
 

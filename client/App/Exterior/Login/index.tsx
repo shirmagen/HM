@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Paper, Divider } from '@material-ui/core';
+import { Typography, Paper, Divider } from '@mui/material';
 import { Column, Row } from 'mui-flex-layout';
 import { useHistory } from 'react-router';
 import styled from 'styled-components';

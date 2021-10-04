@@ -1,6 +1,6 @@
 import React from 'react';
-import { CircularProgress, Typography } from '@material-ui/core';
-import { Favorite } from '@material-ui/icons';
+import { CircularProgress, Typography } from '@mui/material';
+import { Favorite } from '@mui/icons-material';
 import { Column } from 'mui-flex-layout';
 import styled from 'styled-components';
 

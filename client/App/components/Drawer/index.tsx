@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, Divider } from '@material-ui/core';
+import { Drawer, Divider } from '@mui/material';
 
 type ApolloDrawerProps = {
   opened: boolean,

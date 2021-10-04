@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, FC } from 'react';
 import { ApolloAlert } from './Snackbar';
-import { Color } from '@material-ui/lab';
+import { Color } from '@mui/lab';
 
 type AlertContext = {
   close: () => void;

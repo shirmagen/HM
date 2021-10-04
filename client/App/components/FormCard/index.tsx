@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { Row } from 'mui-flex-layout';
-import { Box, Card, CardContent } from '@material-ui/core';
+import { Box, Card, CardContent } from '@mui/material';
 import styled from 'styled-components';
 
 const BackgroundImageBox = styled(Box)`

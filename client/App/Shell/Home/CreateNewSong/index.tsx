@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import TextField from '@material-ui/core/TextField';
+import TextField from '@mui/material/TextField';
 import {CreateNewForm} from '../../../components/FormCard';
 
 export const CreateNewSong = () => {

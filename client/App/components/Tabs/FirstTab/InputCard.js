@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, TextField } from '@material-ui/core';
+import { Card, TextField } from '@mui/material';
 
 export const InputCard = ({ text, onKeyPress, value, onChange, error, helperText }) => {
   return (

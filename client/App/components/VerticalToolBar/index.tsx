@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
-import { IconButton, ButtonGroup } from '@material-ui/core';
-import { Create, FlashOn, QueryBuilderOutlined, SupervisorAccount } from '@material-ui/icons';
+import { IconButton, ButtonGroup } from '@mui/material';
+import { Create, FlashOn, QueryBuilderOutlined, SupervisorAccount } from '@mui/icons-material';
 import styled from 'styled-components';
 import { useHistory } from 'react-router';
 import {FlashMenu} from './FlashMenu';
@@ -30,31 +30,29 @@ export const VerticalToolBar = () => {
     push(path);
   };
 
-  return (
-    <>
-      <ApolloVerticalToolBar orientation="vertical" color="primary">
-        <IconButton
+  return <>
+    <ApolloVerticalToolBar orientation="vertical" color="primary">
+      <IconButton
+        onClick={() => {
+          goToRoute('/draw');
+        }}
+        size="large">
+        <Create/>
+      </IconButton>
+      <IconButton onClick={({currentTarget}) => openMenu(currentTarget)} size="large">
+        <FlashOn/>
+      </IconButton>
+      <FlashMenu anchorEl={anchorEl} open={open} onClose={closeMenu}/>
+      <IconButton size="large">
+        <QueryBuilderOutlined/>
+      </IconButton>
+      <IconButton size="large">
+        <SupervisorAccount
           onClick={() => {
-            goToRoute('/draw');
+            goToRoute('/users');
           }}
-        >
-          <Create/>
-        </IconButton>
-        <IconButton onClick={({currentTarget}) => openMenu(currentTarget)}>
-          <FlashOn/>
-        </IconButton>
-        <FlashMenu anchorEl={anchorEl} open={open} onClose={closeMenu}/>
-        <IconButton>
-          <QueryBuilderOutlined/>
-        </IconButton>
-        <IconButton>
-          <SupervisorAccount
-            onClick={() => {
-              goToRoute('/users');
-            }}
-          />
-        </IconButton>
-      </ApolloVerticalToolBar>
-    </>
-  );
+        />
+      </IconButton>
+    </ApolloVerticalToolBar>
+  </>;
 };

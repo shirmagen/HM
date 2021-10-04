@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, ButtonGroup } from '@material-ui/core';
+import { IconButton, ButtonGroup } from '@mui/material';
 import {
   BorderColorOutlined,
   BrushOutlined,
@@ -9,7 +9,7 @@ import {
   GestureOutlined,
   RadioButtonUncheckedOutlined,
   StopOutlined,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 import styled from 'styled-components';
 import { useHistory } from 'react-router';
 import {Map} from '../Map';
@@ -33,32 +33,32 @@ export const DrawToolBar = () => {
     <Row width={'100%'} height={'100%'}>
       <Map />
       <ApolloDrawToolBar color="primary">
-        <IconButton>
+        <IconButton size="large">
           <BorderColorOutlined />
         </IconButton>
-        <IconButton>
+        <IconButton size="large">
           <BrushOutlined />
         </IconButton>
-        <IconButton>
+        <IconButton size="large">
           <ChangeHistoryOutlined />
         </IconButton>
-        <IconButton>
+        <IconButton size="large">
           <ColorizeOutlined />
         </IconButton>
-        <IconButton>
+        <IconButton size="large">
           <RadioButtonUncheckedOutlined />
         </IconButton>
-        <IconButton>
+        <IconButton size="large">
           <GestureOutlined />
         </IconButton>
-        <IconButton>
+        <IconButton size="large">
           <StopOutlined />
         </IconButton>
         <IconButton
           onClick={() => {
             push('/home');
           }}
-        >
+          size="large">
           <CloseOutlined />
         </IconButton>
       </ApolloDrawToolBar>

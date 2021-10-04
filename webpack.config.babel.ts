@@ -75,7 +75,7 @@ module.exports = {
   ],
   entry: {
     main: ['./client/index.tsx'],
-    vendor: ['lodash', 'react', '@material-ui/core']
+    vendor: ['lodash', 'react', '@mui/material']
   },
   devtool: 'source-map'
 };

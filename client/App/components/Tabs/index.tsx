@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Tab} from './Tab';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button } from '@mui/material';
 import {
   Phone as PhoneIcon,
   Favorite as FavoriteIcon,
@@ -9,7 +9,7 @@ import {
   ShoppingBasket,
   ThumbDown,
   ThumbUp,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 import { DataGrid } from '@material-ui/data-grid';
 import styled from 'styled-components';
 import {FirstTab} from './FirstTab';

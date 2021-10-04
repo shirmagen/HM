@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Row } from 'mui-flex-layout';
-import { IconButton } from '@material-ui/core';
-import { Menu } from '@material-ui/icons';
+import { IconButton } from '@mui/material';
+import { Menu } from '@mui/icons-material';
 import {SearchBar} from '../SearchBar/SearchBar';
 import {ApolloDrawer} from '../Drawer';
 import styled from 'styled-components';

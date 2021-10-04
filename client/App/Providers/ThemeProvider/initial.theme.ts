@@ -1,8 +1,6 @@
-import { deepOrange } from '@material-ui/core/colors';
 import lightTheme from './light.theme';
-import { Theme, ThemeOptions } from '@material-ui/core';
+import { ThemeOptions } from '@mui/material';
 
-export const { 500: ERROR_MAIN } = deepOrange;
 export const INITIAL_PALETTE_TYPE = 'light';
 
 export default <ThemeOptions>{

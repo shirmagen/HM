@@ -2,10 +2,10 @@ import React from 'react';
 import { Row } from 'mui-flex-layout';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { Button, IconButton, Tooltip } from '@material-ui/core';
+import { Button, IconButton, Tooltip } from '@mui/material';
 import { TextField } from 'formik-material-ui';
 import { Formik, Form, Field } from 'formik';
-import { Check } from '@material-ui/icons';
+import { Check } from '@mui/icons-material';
 
 export const FirstTab = () => {
   // in the future there will be type and name
