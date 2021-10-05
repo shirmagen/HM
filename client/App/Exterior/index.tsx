@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { Column } from 'mui-flex-layout';
+import { Grid } from '@mui/material';
 
 export const Exterior: FC = ({ children }) => (
-  <Column width={'100%'} height={'100%'} justifyContent={'center'} alignItems={'center'}>
+  <Grid sx={{ height: '100%' }} justifyContent='center' alignItems='center'>
     {children}
-  </Column>
+  </Grid>
 );

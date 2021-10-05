@@ -1,8 +1,8 @@
 import React from 'react';
-import { Row } from 'mui-flex-layout';
 import { Search } from '@mui/icons-material';
 import {SearchBox} from './SearchBox/SearchBar';
 import styled from 'styled-components';
+import { Grid } from '@mui/material';
 
 const ApolloSearchIcon = styled(Search)`
   position: absolute;
@@ -13,8 +13,8 @@ const ApolloSearchIcon = styled(Search)`
 
 export const SearchBar = () =>
   (
-    <Row width={'100%'}>
+    <Grid>
       <SearchBox/>
       <ApolloSearchIcon/>
-    </Row>
+    </Grid>
   );

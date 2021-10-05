@@ -1,23 +1,10 @@
 import React, { useState } from 'react';
 import {Tab} from './Tab';
-import { TextField, Button } from '@mui/material';
-import {
-  Phone as PhoneIcon,
-  Favorite as FavoriteIcon,
-  PersonPin as PersonPinIcon,
-  Help as HelpIcon,
-  ShoppingBasket,
-  ThumbDown,
-  ThumbUp,
-} from '@mui/icons-material';
-import { DataGrid } from '@material-ui/data-grid';
+import { Button } from '@mui/material';
+
 import styled from 'styled-components';
 import {FirstTab} from './FirstTab';
 
-const ApolloDataGrid = styled(DataGrid)`
-    height: 50%;
-    width: 100%;
-  `;
 
   const TabButton = styled(Button)`
     flex: 1;

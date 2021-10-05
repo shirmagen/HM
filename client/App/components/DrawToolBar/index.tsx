@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, ButtonGroup } from '@mui/material';
+import { IconButton, ButtonGroup, Grid } from '@mui/material';
 import {
   BorderColorOutlined,
   BrushOutlined,
@@ -13,7 +13,6 @@ import {
 import styled from 'styled-components';
 import { useHistory } from 'react-router';
 import {Map} from '../Map';
-import { Row } from 'mui-flex-layout';
 
 const ApolloDrawToolBar = styled(ButtonGroup)`
   position: absolute;
@@ -30,7 +29,7 @@ export const DrawToolBar = () => {
   let { push } = useHistory();
 
   return (
-    <Row width={'100%'} height={'100%'}>
+    <Grid sx={{height: '100%'}}>
       <Map />
       <ApolloDrawToolBar color="primary">
         <IconButton size="large">
@@ -62,6 +61,6 @@ export const DrawToolBar = () => {
           <CloseOutlined />
         </IconButton>
       </ApolloDrawToolBar>
-    </Row>
+    </Grid>
   );
 };

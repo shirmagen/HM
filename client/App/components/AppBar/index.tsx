@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Row } from 'mui-flex-layout';
-import { IconButton } from '@mui/material';
+import { Grid, IconButton } from '@mui/material';
 import { Menu } from '@mui/icons-material';
 import {SearchBar} from '../SearchBar/SearchBar';
 import {ApolloDrawer} from '../Drawer';
@@ -9,15 +8,6 @@ import styled from 'styled-components';
 const ApolloMenu = styled(IconButton)`
   width: 50px;
   height: 50px;
-`;
-
-const ApolloAppBar = styled(Row)`
-color: grey;
-position: absolute;
-width: 250px;
-height: 50px;
-background: white;
-z-index: 1;
 `;
 
 export const AppBar = () => {
@@ -32,12 +22,12 @@ export const AppBar = () => {
   };
 
   return (
-    <ApolloAppBar>
+    <Grid>
       <ApolloMenu onClick={openDrawer}>
         <Menu />
       </ApolloMenu>
       <SearchBar />
       <ApolloDrawer onClose={closeDrawer} opened={openedDrawer} />
-    </ApolloAppBar>
+    </Grid>
   );
 };

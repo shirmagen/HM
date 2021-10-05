@@ -1,6 +1,5 @@
 import React from 'react';
-import { Typography, Paper, Divider } from '@mui/material';
-import { Column, Row } from 'mui-flex-layout';
+import { Typography, Paper, Divider, Grid } from '@mui/material';
 import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import useAuthApi from '../../hooks/api/auth.hook';
@@ -34,11 +33,11 @@ const Icon = styled.img`
   margin: 10px;
 `;
 
-const ApolloLogin = styled(Column)`
+const ApolloLogin = styled(Grid)`
   background: linear-gradient(45deg, #000000f5, #004d79);
 `;
 
-const AuthWrapper = styled(Column)`
+const AuthWrapper = styled(Grid)`
   background-color: white;
 `;
 
@@ -63,20 +62,19 @@ export const Login = () => {
   return (
     <ApolloLogin width={'100%'} height={'100%'} justifyContent={'center'} alignItems={'center'}>
       <LoginPaper elevation={0}>
-        <Row width={'100%'} height={'100%'} alignItems={'center'} justifyContent={'flex-start'}>
-          <Column alignItems={'center'} width={'40%'} height={'100%'} justifyContent={'center'}>
+        <Grid alignItems={'center'} justifyContent={'flex-start'}>
+          <Grid alignItems={'center'} justifyContent={'center'}>
             <Title>{'HM'}</Title>
-          </Column>
+          </Grid>
           <LayoutDivider />
           <AuthWrapper
-            width={'60%'}
-            height={'100%'}
+            direction={'column'}
             justifyContent={'center'}
             alignItems={'center'}
           >
             <LoginForm handleSubmit={handleLogin} />
           </AuthWrapper>
-        </Row>
+        </Grid>
       </LoginPaper>
     </ApolloLogin>
   );

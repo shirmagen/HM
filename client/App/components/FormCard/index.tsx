@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import Button from '@mui/material/Button';
-import { Row } from 'mui-flex-layout';
-import { Box, Card, CardContent } from '@mui/material';
+import { Box, Card, CardContent, Grid } from '@mui/material';
 import styled from 'styled-components';
 
 const BackgroundImageBox = styled(Box)`
@@ -39,7 +38,7 @@ type CreateNewFormProps = {
 
 export const CreateNewForm: FC<CreateNewFormProps> = ({ onSubmit, children }) =>
   (
-    <Row width={'100%'} height={'100%'} justifyContent="center">
+    <Grid justifyContent="center">
       <FormCard>
         <FormCardContent>
           <FormBox>
@@ -55,5 +54,5 @@ export const CreateNewForm: FC<CreateNewFormProps> = ({ onSubmit, children }) =>
           </BackgroundImageBox>
         </FormCardContent>
       </FormCard>
-    </Row>
+    </Grid>
   );

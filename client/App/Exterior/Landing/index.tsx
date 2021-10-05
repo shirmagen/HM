@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Row, Column } from 'mui-flex-layout';
 import { useHistory } from 'react-router-dom';
-import { Button, Typography } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
 
 const Logo = styled.img`
   margin-right: 15px;
   height: 100px;
 `;
 
-const ApolloLanding = styled(Column)`
+const ApolloLanding = styled(Grid)`
   background: linear-gradient(45deg, #000000f5, #004d79);
 `;
 
@@ -33,16 +32,16 @@ export const Landing = () => {
   };
 
   return (
-    <ApolloLanding width={'100%'} height={'100%'}>
-      <Row height={'15%'} width={'100%'} alignItems={'center'}>
-        <Row width={'100%'} height={'100%'} alignItems={'center'}>
-          <Row width={'100%'} alignItems={'center'} justifyContent={'space-between'}>
-            <Row alignItems={'center'} justifyContent={'center'} width={'20%'}>
+    <ApolloLanding direction={'column'}>
+      <Grid sx={{height: '15%'}} width={'100%'} alignItems={'center'}>
+        <Grid alignItems={'center'}>
+          <Grid alignItems={'center'} justifyContent={'space-between'}>
+            <Grid alignItems={'center'} justifyContent={'center'}>
               <Title variant={'h3'} color={'inherit'}>
                 {'Hm'}
               </Title>
-            </Row>
-            <Row m={2}>
+            </Grid>
+            <Grid>
               <AuthButton
                 onClick={gotoLogin}
                 size={'large'}
@@ -51,10 +50,10 @@ export const Landing = () => {
               >
                 {'Log in'}
               </AuthButton>
-            </Row>
-          </Row>
-        </Row>
-      </Row>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </ApolloLanding>
   );
 };

@@ -1,9 +1,9 @@
 import lightTheme from './light.theme';
-import { ThemeOptions } from '@mui/material';
+import { createTheme } from '@mui/material';
 
 export const INITIAL_PALETTE_TYPE = 'light';
 
-export default <ThemeOptions>{
+export default createTheme({
   direction: 'rtl',
   ...lightTheme,
   typography: {
@@ -12,4 +12,4 @@ export default <ThemeOptions>{
       textTransform: 'none'
     }
   }
-};
+});

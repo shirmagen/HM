@@ -1,7 +1,5 @@
 import React from 'react';
-import { Column, Row, Padded } from 'mui-flex-layout';
-import { TextField } from 'formik-material-ui';
-import { Button, Typography } from '@mui/material';
+import { Button, Typography, TextField, Grid, Box } from '@mui/material';
 import styled from 'styled-components';
 import { Form, Field, Formik, FormikHelpers } from 'formik';
 import schema from './login-form.schema';
@@ -24,23 +22,23 @@ type LoginFormProps = {
 export const LoginForm = ({ handleSubmit }: LoginFormProps) =>
   (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={schema}>
-      <Column height={'100%'} width={'100%'} justifyContent={'center'} alignItems={'center'}>
+      <Grid direction={'column'} justifyContent={'center'} alignItems={'center'}>
         <Header variant={'h3'}>{'Log in'}</Header>
-        <Row height={'5%'}/>
+        <Grid sx={{height: '5%'}}/>
 
         <FullForm>
-          <Padded>
+          <Box m={1}>
             <Field fullWidth type="email" label="Email" name="email" component={TextField}/>
-          </Padded>
-          <Padded>
+          </Box>
+          <Box m={1}>
             <Field fullWidth type="password" label="Password" name="password" component={TextField}/>
-          </Padded>
-          <Padded m={1}>
+          </Box>
+          <Box m={1}>
             <Button fullWidth color={'primary'} variant={'contained'} type={'submit'}>
               {'Log in'}
             </Button>
-          </Padded>
+          </Box>
         </FullForm>
-      </Column>
+      </Grid>
     </Formik>
   );

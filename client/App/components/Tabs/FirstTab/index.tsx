@@ -1,9 +1,7 @@
 import React from 'react';
-import { Row } from 'mui-flex-layout';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { Button, IconButton, Tooltip } from '@mui/material';
-import { TextField } from 'formik-material-ui';
+import { Button, IconButton, Tooltip, TextField, Grid } from '@mui/material';
 import { Formik, Form, Field } from 'formik';
 import { Check } from '@mui/icons-material';
 
@@ -72,7 +70,7 @@ export const FirstTab = () => {
 
   return (
     <>
-      <Row width={'100%'}>
+      <Grid>
         {/* <form
           style={{ display: 'flex', flexFlow: 'row wrap', alignItems: 'center' }}
           onSubmit={formik.handleSubmit}
@@ -99,19 +97,19 @@ export const FirstTab = () => {
           {() =>
             fields.map((x) => (
               <Form>
-                <Row width={'100%'} alignItems={'center'} justifyContent={'center'}>
+                <Grid alignItems={'center'} justifyContent={'center'}>
                   <Field fullWidth type={'number'} autoFocus {...x} component={TextField} />
                   <Tooltip title={'Share'}>
                     <IconButton type={'submit'} size={'small'}>
                       <Check />
                     </IconButton>
                   </Tooltip>
-                </Row>
+                </Grid>
               </Form>
             ))
           }
         </Formik>
-      </Row>
+      </Grid>
       <Button
         style={{
           position: 'absolute',

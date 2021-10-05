@@ -1,7 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Typography, Button } from '@mui/material';
-import { Column, Padded } from 'mui-flex-layout';
+import { Typography, Button, Grid, Box } from '@mui/material';
 import styled from 'styled-components';
 
 import Image from '../../../assets/404.png';
@@ -17,16 +16,16 @@ export const NotFound = () => {
   const handleHome = () => push('/home');
 
   return (
-    <Column justifyContent={'center'} alignItems={'center'} height={'100%'} width={'100%'}>
+    <Grid direction={'column'} justifyContent={'center'} alignItems={'center'}>
       <ApolloNotFound src={Image} />
-      <Padded p={2}>
+      <Box p={2}>
         <Typography>{'The requested page was not found'}</Typography>
-      </Padded>
-      <Padded p={2}>
+      </Box>
+      <Box p={2}>
         <Button size={'large'} color={'primary'} variant={'contained'} onClick={handleHome}>
           {'Back to Home'}
         </Button>
-      </Padded>
-    </Column>
+      </Box>
+    </Grid>
   );
 };

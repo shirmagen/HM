@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { Layout } from 'mui-flex-layout';
 import { useTheme } from '../../Providers/ThemeProvider';
+import { Grid } from '@mui/material';
 
 export const ApolloLayout: FC = ({ children }) => {
   const { palette: { background: { default: defaultBackground } } } = useTheme();
 
-  return <Layout color={defaultBackground}>{children}</Layout>;
+  return <Grid sx={{color:defaultBackground}}>{children}</Grid>;
 };
